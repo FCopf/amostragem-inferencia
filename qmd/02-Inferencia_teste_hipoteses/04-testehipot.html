@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -61,6 +124,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -180,7 +244,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Conteúdo</h2>
+   
+  <ul class="collapse">
+  <li><a href="#probabilidade-e-teste-de-hipóteses" id="toc-probabilidade-e-teste-de-hipóteses" class="nav-link active" data-scroll-target="#probabilidade-e-teste-de-hipóteses"><span class="toc-section-number">6.1</span>  Probabilidade e teste de hipóteses</a></li>
+  <li><a href="#exemplificando-um-teste-de-hipóteses-o-teste-z" id="toc-exemplificando-um-teste-de-hipóteses-o-teste-z" class="nav-link" data-scroll-target="#exemplificando-um-teste-de-hipóteses-o-teste-z"><span class="toc-section-number">6.2</span>  Exemplificando um teste de hipóteses: o teste <span class="math inline">\(Z\)</span></a></li>
+  <li><a href="#tomada-de-decisão-sobre-h_0-nível-de-significância" id="toc-tomada-de-decisão-sobre-h_0-nível-de-significância" class="nav-link" data-scroll-target="#tomada-de-decisão-sobre-h_0-nível-de-significância"><span class="toc-section-number">6.3</span>  Tomada de decisão sobre <span class="math inline">\(H_0\)</span>: nível de significância</a></li>
+  <li><a href="#erros-de-decisão-em-um-teste-de-hipóteses" id="toc-erros-de-decisão-em-um-teste-de-hipóteses" class="nav-link" data-scroll-target="#erros-de-decisão-em-um-teste-de-hipóteses"><span class="toc-section-number">6.4</span>  Erros de decisão em um teste de hipóteses</a></li>
+  <li><a href="#estabelecendo-a-hipótese-alternativa-testes-bicaudais-e-unicaudais" id="toc-estabelecendo-a-hipótese-alternativa-testes-bicaudais-e-unicaudais" class="nav-link" data-scroll-target="#estabelecendo-a-hipótese-alternativa-testes-bicaudais-e-unicaudais"><span class="toc-section-number">6.5</span>  Estabelecendo a hipótese alternativa: testes Bicaudais e Unicaudais</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -216,13 +290,214 @@ Pacotes, funções e base de dados utilizadas no capítulo
 <div class="callout-body-container callout-body">
 <p>Pacotes:</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>Um dos objetivos centrais em estatística é fazer inferências válidas para a <strong>população</strong> examinando as características de uma <strong>amostra</strong>. Considere as afirmações abaixo:</p>
+<blockquote class="blockquote">
+<p><em>A fragmentação de habitats reduz a diversidade de espécies</em>;</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><em>Em níveis elevados de poluentes, a mortalidade de um determinado organismo aumenta</em>;</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><em>A remoção da área de mangue implica na redução da captura de carbono</em>.</p>
+</blockquote>
+<p>Todas estas afirmações são na realidade <strong>hipóteses</strong>, sobre um ou mais parâmetros de uma população estatística que podem ser testadas por meio de experimentos adequados. A experimentação nos permite tirar conclusões sobre determitada hipótese com base na amostra. Mais especificamente, queremos saber se os dados em mãos nos permitem ou não refutar uma hipótese inicial. Portanto, se desejamos fazer uma inferência sobre um parâmetro da população estatística (ex.: sua média <span class="math inline">\(\mu\)</span>), devemos iniciar com uma afirmação sobre a posição deste parâmetro, que denominamos de <strong>hipótese nula</strong> (<span class="math inline">\(H_0\)</span>).</p>
+<p>Vamos a um exemplo simples;</p>
+<blockquote class="blockquote">
+<p>Imagine que um modelo de climático estabeleça que a pluviosidade média entre junho e agosto nas cidades litorâneas do estado de São Paulo seja de <span class="math inline">\(110\)</span> mm/mês.</p>
+</blockquote>
+<p>Um cientista acredita que o modelo têm falhas e resolve tomar algumas observações sobre chuva mensal a fim de testar esta afirmação. Este cientista inicia formulando suas <strong>hipóteses estatísticas</strong>.</p>
+<ol type="1">
+<li><strong>Hipotese nula (<span class="math inline">\(H0\)</span>)</strong>: Inicialmente será necessário estabelecer o que chamamos de hipótese nula. Se uma análise estatística concluir que a hipótese nula deve ser <strong>falsa</strong>, então precisaremos ter me mãos uma hipótese <strong>alternativa</strong> (<span class="math inline">\(H_a\)</span>). Assim, no caso de rejeição de <span class="math inline">\(H_0\)</span>, passaremos a assumir <span class="math inline">\(H_a\)</span> como <strong>verdadeira</strong>. Neste exemplo teríamos:</li>
+</ol>
+<p><span class="math inline">\(H_0: \mu = 110\)</span> mm de chuva (HIPÓTESE NULA)</p>
+<p><span class="math inline">\(H_a: \mu \ne 110\)</span> mm de chuva (HIPÓTESE ALTERNATIVA)</p>
+<ol start="2" type="1">
+<li><p><strong>Limite de rejeição</strong>: O segundo passo é decidir sobre o limite de rejeição, isto é, um limite a partir do qual iremos conlcuir que <span class="math inline">\(H_0\)</span> é falsa. Este limite está baseado no que denominamos de <strong>nível de significância</strong> (<span class="math inline">\(\alpha\)</span>) sobre o qual iremos falar adiante.</p></li>
+<li><p><strong>Experimentação</strong>: O terceiro passo é montar um experimento que nos permita testar a hipótese nula, tomando amostras sobre o fenômeno em questão. Note que as hipóteses nula e alternativa se referem a predições sobre a posição da <strong>média populaçional</strong> <span class="math inline">\(\mu\)</span>, que é justamente a informação que não temos, mas sobre a qual queremos conhecer. Como não temos acesso à <span class="math inline">\(\mu\)</span>, nossa opção é tomar amostras do fenômenoe (i.e.&nbsp;quantidade de chuva em diferentes localidades), calcular a média amostral <span class="math inline">\(\overline{X}\)</span> e compará-la com a média populacional descrita em <span class="math inline">\(H_0\)</span>.</p></li>
+</ol>
+<section id="probabilidade-e-teste-de-hipóteses" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="probabilidade-e-teste-de-hipóteses"><span class="header-section-number">6.1</span> Probabilidade e teste de hipóteses</h2>
+<p>A média <span class="math inline">\(\overline{X}\)</span> de uma amostra será nossa melhor evidência a respeito de <span class="math inline">\(\mu\)</span>. Tendo este valor, podemos nos perguntar:</p>
+<blockquote class="blockquote">
+<p>O valor obtido de <span class="math inline">\(\overline{X}\)</span> é condizente com o esperado segundo <span class="math inline">\(H_0\)</span>?</p>
+</blockquote>
+<p>Caso <span class="math inline">\(\overline{X}\)</span> esteja <strong>muito próximo</strong> a <span class="math inline">\(\mu\)</span>, não há evidências para rejeitar <span class="math inline">\(H_0\)</span>. Por outro lado, um valor de <span class="math inline">\(\overline{X}\)</span> muito distante de <span class="math inline">\(\mu\)</span> irá colocar em dúvida a afirmação estabelecida em <span class="math inline">\(H_0\)</span>. O ponto relevante aqui é decidirmos <em>quão distante de <span class="math inline">\(\mu\)</span> deve estar <span class="math inline">\(\overline{X}\)</span> para que rejeitemos <span class="math inline">\(H_0\)</span>?</em> Esta resposta poderá ser respondida <strong>somente</strong> com o auxílio de um modelo probabilístico aplicado ao experimento em questão.</p>
+<p>Seja <span class="math inline">\(H_0\)</span> verdadeira, é esperado que a probabilidade de <span class="math inline">\(\overline{X}\)</span> estar próximo a <span class="math inline">\(\mu\)</span> é alta. Portanto, uma pergunta melhor formulada seria:</p>
+<blockquote class="blockquote">
+<p>Sendo <span class="math inline">\(H_0\)</span> <strong>verdadeira</strong>, qual é a probabilidade de que uma determinada média amostral <span class="math inline">\(\overline{X}\)</span> esteja tão ou mais distante de <span class="math inline">\(\mu\)</span> quanto o observado em nossa amostra particular?</p>
+</blockquote>
+<section id="um-modelo-de-distribuição-das-médias-amostrais-para-testar-h_0" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="um-modelo-de-distribuição-das-médias-amostrais-para-testar-h_0"><span class="header-section-number">6.1.1</span> Um modelo de distribuição das médias amostrais para testar <span class="math inline">\(H_0\)</span></h3>
+<p>A pergunta feita acima é de natureza probabilística, de modo que para respondê-la iremos precisar estabelecer um <strong>modelo probabilístico</strong> para a distribuição das médias amostrais. De acordo com o que temos discutido até este ponto, <strong>Teorema Central do Limite (TCL)</strong> (<a href="02-tcl.html"><span>Capítulo&nbsp;4</span></a>) estabelece que a distribuição normal é um bom modelo neste situação.</p>
+<p>Desta forma, para um <span class="math inline">\(H_0\)</span> verdadeiro, seria esperado que a distribuição das médias amostrais resultantes de um procedimento experimental tivesse o formato de um distribuição normal, centrada em <span class="math inline">\(110\)</span> mm. Segundo o TCL, a distribuição seria centrada em <span class="math inline">\(\mu\)</span> e o desvio padrão seria definido pelo <strong>erro padrão da média</strong> (<a href="../01-amostragem_delineamento/02-amostragem.html"><span>Capítulo&nbsp;2</span></a>), isto é, <span class="math inline">\(\sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}}\)</span>.</p>
+<p>Digamos ainda que o modelo climático estabeleça que desvio padrão para a quantidade de chuva seja <span class="math inline">\(\sigma = 30\)</span>. Neste caso, o erro padrão seria de <span class="math inline">\(\sigma_{\mu} = \frac{30}{\sqrt{n}}\)</span>.</p>
+<p>Feito isto, temos em mãos o <strong>modelo probabilístico</strong> que, aliado a uma amostra particular, nos permitirá concluir se há evidências para rejeitar <span class="math inline">\(H_0\)</span> em favor de <span class="math inline">\(H_a\)</span>.</p>
+</section>
+<section id="definindo-o-limite-de-rejeição-para-h_0" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="definindo-o-limite-de-rejeição-para-h_0"><span class="header-section-number">6.1.2</span> Definindo o limite de rejeição para <span class="math inline">\(H_0\)</span></h3>
+<p>Segundo a distribuição normal, a probabilidade do valor observado <span class="math inline">\(\overline{X}\)</span> estar <strong>tão ou mais distante</strong> de <span class="math inline">\(\mu\)</span> na distribuição <span class="math inline">\(Z\)</span> é calculando por:</p>
+<p><span class="math display">\[z = \frac{\overline{X} - \mu}{\sigma_{\overline{X}}}\]</span></p>
+<p>O valor de <span class="math inline">\(z\)</span> calculado é chamado de <strong>estatitica do teste</strong>. Com o uso da Tabela <span class="math inline">\(Z\)</span>, esta estatística será utilizada para encontrar:</p>
+<p><span class="math display">\[P(Z \ge z) = P(\overline{X} \ge \mu)\]</span></p>
+<p>Como nossa pergunta se refere à <strong>distância</strong> entre <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(\mu\)</span>, devemos encontar também <span class="math inline">\(P(Z \le -z)\)</span>, de modo que a probabilidade que nos interessa será representada pela área destacada em vermelho na figura abaixo que nos dá <span class="math inline">\(P(Z \ge |z|)\)</span>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-limite-rej" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="04-testehipot_files/figure-html/fig-limite-rej-1.png" class="img-fluid figure-img" width="768"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;6.1: Representação da parea de rejeição para a distribuição Z.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A área destacada em vermelho será irá diminuir conforme <span class="math inline">\(\overline{X}\)</span> se distancia de <span class="math inline">\(\mu\)</span> e irá aumentar para valores de <span class="math inline">\(\overline{X}\)</span> muito próximos a <span class="math inline">\(\mu\)</span>. Como estamos falando de uma distribuição de probabilidade, esta área mede a probabilidade de encontrarmos <span class="math inline">\(\overline{X}\)</span> pelo menos a uma dada distância de <span class="math inline">\(\mu\)</span>, <strong>assumindo</strong> que <span class="math inline">\(H_0\)</span> seja verdadeiro. Se esta área for muito pequena, a probabilidade de que <span class="math inline">\(\overline{X}\)</span> seja condizente com <span class="math inline">\(H_0\)</span> diminui. Chamaremos este probabilidade de <strong>valor de p</strong>. Portanto, se <span class="math inline">\(p\)</span> for <strong>muito pequeno</strong> dizemos que é improvável que <span class="math inline">\(\overline{X}\)</span> seja condizente com <span class="math inline">\(H_0\)</span>, nos levando a <strong>rejeitar</strong> <span class="math inline">\(H_O\)</span> em favor de <span class="math inline">\(H_a\)</span>.</p>
+<p>A decisão sobre o que é uma probabilidade foi <strong>muito pequena</strong> é feita com base no <strong>limite de rejeição</strong> <span class="math inline">\(\alpha\)</span>, também chamado de <strong>nivel crítico</strong> ou <strong>nível de significância</strong>. Deste modo, a conclusão de um teste estatístico se dá por:</p>
+<blockquote class="blockquote">
+<p>Se <span class="math inline">\(p &gt; \alpha\)</span> –&gt; <strong>ACEITAMOS <span class="math inline">\(H_0\)</span></strong></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Se <span class="math inline">\(p \le \alpha\)</span> –&gt; <strong>REJEITAMOS <span class="math inline">\(H_0\)</span></strong> (e assumimos <span class="math inline">\(H_a\)</span> como verdadeira)</p>
+</blockquote>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-limite-rej-alfa" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="04-testehipot_files/figure-html/fig-limite-rej-alfa-1.png" class="img-fluid figure-img" width="768"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;6.2: Efeito do nível de significancia sobre a área de rejeição em um teste de hipótese.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exemplificando-um-teste-de-hipóteses-o-teste-z" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="exemplificando-um-teste-de-hipóteses-o-teste-z"><span class="header-section-number">6.2</span> Exemplificando um teste de hipóteses: o teste <span class="math inline">\(Z\)</span></h2>
+<p>Digamos que o número de batimentos cardíacos por minuto de um adulto em repouso tenha média <span class="math inline">\(\mu = 65\)</span> e desvio padrão <span class="math inline">\(\sigma = 9\)</span>. Você imagina que o sedentarismo altera o batimento médio de um adulto. Para testar esta suposição você deve inicialmente determinar as hipóteses nula e alternativa:</p>
+<p><span class="math inline">\(H_0: \mu = 65\)</span> batimentos por minuto</p>
+<p><span class="math inline">\(H_a: \mu \ne 65\)</span> batimentos por minuto</p>
+<p>Em seguida você determina o nível de significância (<span class="math inline">\(\alpha\)</span>) do teste. Vamos determinar que queremos fazer o teste ao nível de significância <span class="math inline">\(\alpha = 0,05\)</span>.</p>
+<blockquote class="blockquote">
+<p>IMPORTANTE: O nível de significância <span class="math inline">\(\alpha\)</span> deve ser determinado <strong>antes</strong> da tomada de dados.</p>
+</blockquote>
+<p>Finalmente, você seleciona <em>ao acaso</em> <span class="math inline">\(n = 15\)</span> pessoas de hábito sedentário e mede seus batimentos cardíacos.</p>
+<p>Os resultados obtidos desta amotra <em>aleatória</em> são:</p>
+<div class="cell">
 
 </div>
+<p>Amostra: 65, 73, 56, 71, 69, 69, 68, 59, 73, 68, 69, 64, 67, 64, 66</p>
+<p>que nos dá uma média amostral de:</p>
+<p><span class="math inline">\(\overline{X} = \frac{\sum{X_i}}{n} = \frac{65+73+56+71+69+69+68+59+73+68+69+64+67+64+66}{15} = 66.73\)</span> batimentos por minuto;</p>
+<p>e um erro padrão de:</p>
+<p><span class="math inline">\(\sigma_{\mu} = \frac{\sigma}{\sqrt{n}} = \frac{9}{3.87} = 2.32\)</span></p>
+<p>Com estes resultados encontramos o valor correspondente de Z.</p>
+<p><span class="math inline">\(z = \frac{\overline{X} - \mu}{\sigma_{\mu}} = \frac{66.73 - 65}{2.32} = 0.75\)</span></p>
+<p>Utilizando a Tabela Z, encontramos a probabilidade de obtermos valores tão ou mais extremos que <span class="math inline">\(-0.75\)</span> e <span class="math inline">\(+0.75\)</span>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-limite-tz" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="04-testehipot_files/figure-html/fig-limite-tz-1.png" class="img-fluid figure-img" width="768"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;6.3: Área de rejeição para z = 0,75.</figcaption><p></p>
+</figure>
 </div>
 </div>
 </div>
+<p>Com isto, a probabilidade de encontarmos valores tão ou mais extermos que <span class="math inline">\(\overline{X} = 66.73\)</span> foi calculada em <span class="math inline">\(0.227 + 0.227 =\)</span> <strong>0.453</strong>.</p>
+<p>Neste exemplo, a <strong>estatística do teste</strong> foi <span class="math inline">\(z = 0.75\)</span> o a probabilidade associada <span class="math inline">\(p = 0.453\)</span>.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Teste Z no R
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">65</span>, <span class="dv">73</span>, <span class="dv">56</span>, <span class="dv">71</span>, <span class="dv">69</span>, <span class="dv">69</span>, <span class="dv">68</span>, <span class="dv">59</span>, <span class="dv">73</span>, <span class="dv">68</span>, <span class="dv">69</span>, <span class="dv">64</span>, <span class="dv">67</span>, <span class="dv">64</span>, <span class="dv">66</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Xm <span class="ot">&lt;-</span> <span class="fu">mean</span>(X)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> Xm, <span class="at">mean =</span> <span class="dv">65</span>, <span class="at">sd =</span> <span class="dv">9</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">15</span>), <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) <span class="sc">*</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.4557231</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="tomada-de-decisão-sobre-h_0-nível-de-significância" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="tomada-de-decisão-sobre-h_0-nível-de-significância"><span class="header-section-number">6.3</span> Tomada de decisão sobre <span class="math inline">\(H_0\)</span>: nível de significância</h2>
+<p>No exemplo anterior, obtivemos <span class="math inline">\(p =\)</span> <strong>0.453</strong>. Isto significa que:</p>
+<blockquote class="blockquote">
+<p>sendo <span class="math inline">\(H_0\)</span> <strong>verdadeira</strong>, existe uma probabilidade igual a <span class="math inline">\(0.453\)</span> de que a média de uma amostra com <span class="math inline">\(n = 15\)</span> esteja tão ou mais distante de <span class="math inline">\(\mu = 65\)</span> como observado neste experimento.</p>
+</blockquote>
+<p>Se aceitarmos que esta probabilidade é <strong>alta</strong>, então não há motivo para buscar por outras explicações. Por outro lado, se concluirmo que esta probabilidade é <strong>baixa</strong>, estamos dizendo que resultado obtido é <strong>improvável</strong> segundo a hipótese nula. Neste caso, temos espaço para buscar por hipóteses <strong>alternativas</strong> que possam explicar o fenômeno.</p>
+<p>Para decidir se a probabilidade obtida é alta ou baixa, devemos compará-la ao nível de significância <span class="math inline">\(\alpha\)</span> pré-estabelecido. <span class="math inline">\(H_0\)</span> será aceita somente se a probabilidade encontrada for <strong>maior</strong> que <span class="math inline">\(\alpha\)</span>. Por outro lado, se nossa probabilidade for <strong>menor ou igual</strong> a <span class="math inline">\(\alpha\)</span>, considerarmos os resultados improváveis segundo a hipótese nula e <strong>rejeitamos</strong> <span class="math inline">\(H_0\)</span> em favor de <span class="math inline">\(H_a\)</span>.</p>
+<p>Um nível crítico comumente utilizado é <span class="math inline">\(\alpha = 0.05\)</span>. No exemplo acima a probabilidade foi de 0.453, um valor muito acima de <span class="math inline">\(0.05\)</span>. Dizemos portanto, que a média amostral <span class="math inline">\(\overline{X}\)</span> não está tão distante do <span class="math inline">\(\mu\)</span> a ponto de rejeitarmos <span class="math inline">\(H_0\)</span>.</p>
+<blockquote class="blockquote">
+<p>Concluimos que, neste exemplo, <span class="math inline">\(\overline{X} = 66.73\)</span> não nos fornece evidência suficiente para rejeitar <span class="math inline">\(H_0\)</span>.</p>
+</blockquote>
+</section>
+<section id="erros-de-decisão-em-um-teste-de-hipóteses" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="erros-de-decisão-em-um-teste-de-hipóteses"><span class="header-section-number">6.4</span> Erros de decisão em um teste de hipóteses</h2>
+<p>A interpretação da probabilidade final esta associada à situação em que <span class="math inline">\(H_0\)</span> seja verdadeira.</p>
+<p>Isto nos leva perguntar: <em>o que esperar caso <span class="math inline">\(H_0\)</span> seja falsa</em>?</p>
+<p>Como não sabemos de fato, de <span class="math inline">\(H_0\)</span> é verdadeira ou não, a tomada de decisão sobre um resultado de um teste estatístico pode nos levar às seguintes situações:</p>
+<div id="tbl-erros" class="anchored">
+<table class="table">
+<caption>Tabela&nbsp;6.1: Erros de decisão em um teste de hipótestes</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 40%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;"><span class="math inline">\(H_0\)</span> Verdadeira</th>
+<th style="text-align: center;"><span class="math inline">\(H_0\)</span> Falsa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(H_0\)</span> é rejeitada</td>
+<td style="text-align: center;"><span class="math inline">\(\alpha\)</span> (<span class="math inline">\(\textbf{Erro Tipo I}\)</span>)</td>
+<td style="text-align: center;">Decisão correta (<span class="math inline">\(1-\beta\)</span>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(H_0\)</span> é aceita</td>
+<td style="text-align: center;">Decisão correta (<span class="math inline">\(1-\alpha\)</span>)</td>
+<td style="text-align: center;"><span class="math inline">\(\beta\)</span> (<span class="math inline">\(\textbf{Erro Tipo II}\)</span>)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A <a href="#tbl-erros">Tabela&nbsp;<span>6.1</span></a> nos mostra os tipos de erros aos quais estamos sujeitos ao realizar um teste de hipótese. Podemos rejeitar <span class="math inline">\(H_0\)</span>, ainda que ela seja verdadeira. O nivel de significância adotado, estabele que a probabilidade disto acontecer é <span class="math inline">\(\alpha\)</span>. Se rejeitarmos <span class="math inline">\(H_0\)</span> quando ela é verdadeira, estaremos incorrendo em um erro de decisão que denominamos de <strong>Erro Tipo I</strong>. Consequentemente, temos uma probabilidade de <span class="math inline">\(1 - \alpha\)</span> de aceitar corretamente <span class="math inline">\(H_0\)</span> quando ela é verdadeira. Estabelecer um <span class="math inline">\(\alpha = 0,05\)</span> nos garante que iremos incorrer no erro do tipo I em somente <span class="math inline">\(5\%\)</span> das vezes que o experimento for realizado.</p>
+<p>Um outra situação ocorre quando aceitamos erroneamente a hipótese nula que é <strong>falsa</strong>, incorrendo no <strong>Erro Tipo II</strong>. O erro do tipo II tem probabilidade <span class="math inline">\(\beta\)</span> de acontecer. O complementar desta probabilidade (<span class="math inline">\(1-\beta\)</span>) é denominado de <strong>Poder do Teste</strong>. Um teste poderoso é portanto, aquele que tem elevada probabilidade de rejeitar <span class="math inline">\(H_0\)</span> quando ela é falsa.</p>
+<p>As figuras abaixo representam as distribuições das médias amostrais e os erros do tipos I e II quando o <span class="math inline">\(H_0\)</span> é verdadeira (<span class="math inline">\(\mu_a = \mu\)</span>) e quando <span class="math inline">\(H_0\)</span> é falsa (<span class="math inline">\(\mu_a &gt; \mu\)</span>).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-alfa-beta" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="04-testehipot_files/figure-html/fig-alfa-beta-1.png" class="img-fluid figure-img" width="768"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;6.4: Relação entre <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>, ao aceitar ou rejeitar <span class="math inline">\(H_0\)</span>.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Idealmente em um teste estatístico, seria interessante reduzir ao máximo os erros do tipo I e II. Ao reduzirmos o erro do tipo I, diminuindo <span class="math inline">\(\alpha\)</span> teremos um teste mais rigoroso que raramente iria errar ao rejeitar um <span class="math inline">\(H_0\)</span> verdadeiro (Figura A). Entretanto, este teste também <strong>raramente</strong> iria rejeitar <span class="math inline">\(H_0\)</span> ainda que ele seja falso (Figura B). Consequentemente, ao diminuir o valor de <span class="math inline">\(\alpha\)</span> ficamos menos propensos a cometer o erro do tipo I, porém <strong>mais propensos</strong> a incorrer no erro tipo II, isto é, não rejeitar uma <span class="math inline">\(H_0\)</span> falsa.</p>
+<p>Dadas estas características, o único modo que reduzir os dois tipos de erros <strong>simultaneamente</strong> é aumentando o tamanho amostral <span class="math inline">\(n\)</span> pois, neste caso, reduzimos o erro padrão (<span class="math inline">\(\sigma_{\overline{X}}\)</span>) e consequentemente a sobreposição entre as duas curvas acima.</p>
+</section>
+<section id="estabelecendo-a-hipótese-alternativa-testes-bicaudais-e-unicaudais" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="estabelecendo-a-hipótese-alternativa-testes-bicaudais-e-unicaudais"><span class="header-section-number">6.5</span> Estabelecendo a hipótese alternativa: testes Bicaudais e Unicaudais</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
