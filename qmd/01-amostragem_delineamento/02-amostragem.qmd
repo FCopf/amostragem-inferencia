@@ -208,7 +208,7 @@ Podemos avaliar graficamente a distribuição das médias amostrais através de 
 ```{r}
 #| code-fold: true
 #| label: fig-hist-medias252
-#| fig-cap: 'Histograma das 252 médias amostrais obtidas a partis de amostras de tamanho n = 5'
+#| fig-cap: 'Histograma das 252 médias amostrais obtidas a partis de amostras de tamanho n = 5.'
 M_Allcomb_df = data.frame(M = as.numeric(M_Allcomb))
 
 gp5 <- ggplot(M_Allcomb_df, aes(x = M)) +
@@ -298,7 +298,7 @@ em que $s_{\overline{X}}$ é denominado de **erro padrão amostral**
 
 :::
 
-
+___
 
 :::{.callout-note}
 # Vídeo-aulas

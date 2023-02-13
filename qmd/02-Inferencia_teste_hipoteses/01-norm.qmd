@@ -977,11 +977,10 @@ Ao procurar por $0,005$ na tabela $Z$ encontramos $z = -2,57$, de modo que $c = 
 
 Leia o tópico **7.4.2 O Modelo Normal** em @bussabemoretin6a (pag. 176 a 181) e faça os exercícios 14 a 20 da página 184.
 
-<br/>
-
-## Vídeo-aulas
+___
 
 :::{.callout-note}
+
 # Vídeo-aulas
 
 {{< video https://youtu.be/LSjY2yUp4tc >}}

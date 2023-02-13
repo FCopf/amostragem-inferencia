@@ -397,6 +397,8 @@ Este processo pode ser resumido na figura abaixo e será discutido nos próximos
 Processo de amostragem e inferência estatística.
 :::
 
+___
+
 :::{.callout-note}
 # Vídeo-aulas
 
