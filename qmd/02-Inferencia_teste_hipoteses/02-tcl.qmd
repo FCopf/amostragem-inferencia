@@ -1,0 +1,13 @@
+# Distribuição das médias amostrais  {#sec-tcl}
+
+:::{.callout-tip collapse="true"}
+## Pacotes e funções utilizadas no capítulo
+
+```{r}
+library(tidyverse)
+library(patchwork)
+library(knitr)
+```
+:::
+
+

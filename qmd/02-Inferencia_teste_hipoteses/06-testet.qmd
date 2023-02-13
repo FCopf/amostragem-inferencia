@@ -1,0 +1,13 @@
+# Comparando médias: teste t de Student {#sec-testet}
+
+:::{.callout-tip collapse="true"}
+## Pacotes e funções utilizadas no capítulo
+
+```{r}
+library(tidyverse)
+library(patchwork)
+library(knitr)
+```
+:::
+
+

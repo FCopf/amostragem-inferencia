@@ -1,0 +1,13 @@
+# Introdução ao Teste de Hipóteses  {#sec-testehipot}
+
+:::{.callout-tip collapse="true"}
+## Pacotes e funções utilizadas no capítulo
+
+```{r}
+library(tidyverse)
+library(patchwork)
+library(knitr)
+```
+:::
+
+
