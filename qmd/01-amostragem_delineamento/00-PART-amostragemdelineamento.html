@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Fabio Cop, Unifesp, fcferreira@unifesp.br">
-<meta name="dcterms.date" content="2023-02-13">
 
-<title>Amostragem e Inferência Estatística</title>
+<title>Amostragem e Inferência Estatística - Estrutura de dados</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,23 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./qmd/01-amostragem_delineamento/00-PART-amostragemdelineamento.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../qmd/01-amostragem_delineamento/01-popamostra.html" rel="next">
+<link href="../../index.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Amostragem e Inferência Estatística</span>
     </a>
   </div>
@@ -93,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Amostragem e Inferência Estatística</h1>
+      <h1 class="quarto-secondary-nav-title">Estrutura de dados</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -113,12 +112,12 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Apresentação</a>
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">Apresentação</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./qmd/01-amostragem_delineamento/00-PART-amostragemdelineamento.html" class="sidebar-item-text sidebar-link">Estrutura de dados</a>
+            <a href="../../qmd/01-amostragem_delineamento/00-PART-amostragemdelineamento.html" class="sidebar-item-text sidebar-link active">Estrutura de dados</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -126,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmd/01-amostragem_delineamento/01-popamostra.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Descrevendo populações e amostras</span></a>
+  <a href="../../qmd/01-amostragem_delineamento/01-popamostra.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Descrevendo populações e amostras</span></a>
   </div>
 </li>
       </ul>
@@ -136,39 +135,21 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Conteúdo</h2>
-   
-  <ul class="collapse">
-  <li><a href="#apresentação" id="toc-apresentação" class="nav-link active" data-scroll-target="#apresentação">Apresentação</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Amostragem e Inferência Estatística</h1>
+<h1 class="title d-none d-lg-block">Estrutura de dados</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Autor</div>
-    <div class="quarto-title-meta-contents">
-             <p>Fabio Cop, Unifesp, fcferreira@unifesp.br </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Última atualização em</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">February 13, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -177,25 +158,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="apresentação" class="level1 unnumbered">
-<p><img src="cover.jpg" title="Amostragem e Inferência Estatística" class="quarto-cover-image img-fluid"></p><h1 class="unnumbered">Apresentação</h1>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Nota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Ao apresentar <code>data.frames</code> como resultados das análises de dados, utilizaremos o pacote <code>flextable</code> para fins de apresentação gráfica. Caso deseje rodar os códigos no RStudio, remova as funções <code>flextable()</code> e outras funções associadas (ex.: <code>fit_to_width(max_width = 8)</code>).</p>
-<p>Os pacotes utilizados aparecem ao início de cada capítulo.</p>
-</div>
-</div>
 
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -333,10 +296,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../../index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Apresentação</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./qmd/01-amostragem_delineamento/00-PART-amostragemdelineamento.html" class="pagination-link">
-        <span class="nav-page-text">Estrutura de dados</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../qmd/01-amostragem_delineamento/01-popamostra.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Descrevendo populações e amostras</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
