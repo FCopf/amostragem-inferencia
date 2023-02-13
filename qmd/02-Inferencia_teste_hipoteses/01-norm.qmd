@@ -3,17 +3,25 @@
 :::{.callout-tip collapse="true"}
 ## Pacotes, funções e base de dados utilizadas no capítulo
 
+Pacotes:
+
 ```{r}
 library(tidyverse)
 library(patchwork)
-library(knitr)
+```
+
+Funções: <a href="https://github.com/FCopf/amostragem-inferencia/blob/main/scripts/normal_empirica_gg.r" target="_blank">normal_empirica_gg.r</a>
+
+```{r}
 source('scripts/normal_empirica_gg.r')
 ```
 
-Base de dados: altura2022.csv
+Base de dados: <a href="https://github.com/FCopf/amostragem-inferencia/blob/main/datasets/altura2022.csv" target="_blank">altura2022.csv</a> e <a href="https://github.com/FCopf/amostragem-inferencia/blob/main/datasets/rhamdioglanis.csv" target="_blank">rhamdioglanis.csv</a>
 
 ```{r}
 ie = read_delim("datasets/altura2022.csv")
+rh <- read_delim('datasets/rhamdioglanis.csv', delim = ';',
+                 locale = locale(decimal_mark = ','))
 ```
 
 :::
@@ -527,7 +535,8 @@ $P(\frac{m - \mu}{\sigma} \le Z \le \frac{n - \mu}{\sigma}) = \alpha$
 
 Ao utilizarmos um software estatístico não é necessário fazer esta transformação. A transformação $Z$ era necessária na ausência de ferramentas computacionais, ou seja, quando a única opção era utilizarmos a Tabela $Z$ para evitar cálculos tediosos considerando cada combinação de $\mu$ e $\sigma$. 
 
-A tabela $Z$ disponibiliza os valores de probabilidade para um grande número de valores e é apresentada na grande maioria dos livros de estatística.
+
+A <a href="https://github.com/FCopf/amostragem-inferencia/blob/main/qmd/02-Inferencia_teste_hipoteses/img/Tabela_Z.pdf" target="_blank">Tabela Z</a> disponibiliza os valores de probabilidade para um grande número de valores e é apresentada na grande maioria dos livros de estatística.
 
 Você pode utilizar a Tabela $Z$ para encontrar $P(X \le 1.5)$. Note que o valor transformado é $z_{1.5} = `r round(z_1.5,3)`$. Este será o valor que iremos buscar na tabela. Para isto:
 
@@ -541,7 +550,7 @@ Você pode utilizar a Tabela $Z$ para encontrar $P(X \le 1.5)$. Note que o valor
 
 ## Exercícios resolvidos
 
-Importe o conjunto de dados rhamdioglanis.csv
+Importe o conjunto de dados <a href="https://github.com/FCopf/amostragem-inferencia/blob/main/datasets/rhamdioglanis.csv" target="_blank">rhamdioglanis.csv</a>
 
 ```{r}
 rh <- read_delim('datasets/rhamdioglanis.csv', delim = ';',
