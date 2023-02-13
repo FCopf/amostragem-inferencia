@@ -13,7 +13,7 @@ library(patchwork)
 Funções: <a href="https://github.com/FCopf/amostragem-inferencia/blob/main/scripts/tcl_simetry.r" target="_blank">tcl_simetry.r</a>
 
 ```{r}
-source("scripts/tcl_simetry.R")
+source("scripts/tcl_simetry.r")
 ```
 
 
