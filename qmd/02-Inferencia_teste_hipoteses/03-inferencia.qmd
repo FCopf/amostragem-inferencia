@@ -47,7 +47,7 @@ Se desejamos definir o intervalo de confiança a 95% precisamos garantir que haj
 
 > O valor $z_{\alpha/2} = 1.96$ foi retirado da Tabela $Z$ como o módulo do valor de $z$ que delimida uma área inferior igual a $0.025$. 
 
-Se queremos um nível de confiança diferente, basta ajustar o valor de $\alpha$. Por exemplo, se queremos um nível de significância a 99%, fixamos $\alpha$ em $0.01$ e portanto $z = 2.58$. Da mesma forma, o $IC_{90\%}$ poderá ser obtido com $\alpha = 0.10$ e consequentemente $z = 1.64$. Estes e outros limites descrevem as probabilidades em uma distribuição normal padronizada (@sec-norm), que podem ser obtidos com o uso da maioria dos softwares estatísticos, além de estarem incluso na <a href="https://github.com/FCopf/amostragem-inferencia/blob/main/qmd/02-Inferencia_teste_hipoteses/img/Tabela_Z.pdf" target="_blank">Tabela Z</a>, encontrada na grande maioria dos livros de estatística básica. Os valores de $Z$ são os mesmos discutidos no tópico <a href="https://fcopf.github.io/visualizacao-de-dados/qmd/02_dados_univariados/06-escorez.html" target="_blank">Medidas de posição</a>.
+Se queremos um nível de confiança diferente, basta ajustar o valor de $\alpha$. Por exemplo, se queremos um nível de significância a 99%, fixamos $\alpha$ em $0.01$ e portanto $z = 2.58$. Da mesma forma, o $IC_{90\%}$ poderá ser obtido com $\alpha = 0.10$ e consequentemente $z = 1.64$. Estes e outros limites descrevem as probabilidades em uma distribuição normal padronizada (@sec-norm), que podem ser obtidos com o uso da maioria dos softwares estatísticos, além de estarem incluso na <a href="https://github.com/FCopf/amostragem-inferencia/blob/main/files/Tabela_Z.pdf" target="_blank">Tabela Z</a>, encontrada na grande maioria dos livros de estatística básica. Os valores de $Z$ são os mesmos discutidos no tópico <a href="https://fcopf.github.io/visualizacao-de-dados/qmd/02_dados_univariados/06-escorez.html" target="_blank">Medidas de posição</a>.
 
 ```{r}
 #| code-fold: true
@@ -71,10 +71,12 @@ Em que $\alpha$ continua sendo o nível de significância e $gl$ é definido com
 
 $$gl = n-1$$
 
-O formato da distribuição $t$ de student não é constante. À medida que o tamanho amostral aumenta, o formado da distribuição $t$ converge para a distribuição normal. Isto faz com que na prática **raremente** se utilize a distribuição $Z$, substituindo-a pela distribuição $t$ de Student.
+O formato da distribuição $t$ de student não é constante. À medida que o tamanho amostral aumenta, o formado da distribuição $t$ converge para a distribuição normal. Isto faz com que na prática **raremente** se utiliza a distribuição $Z$, substituindo-a pela distribuição $t$ de Student.
 
 ```{r}
 #| echo: false
+#| fig-width: 8
+#| fig-height: 6
 #| label: fig-dist-t
 #| fig-cap: "Função de densidade de t para diferentes graus de liberdade."
 
@@ -84,7 +86,7 @@ n3 <- 30
 ggplot(data = data.frame(x = c(-4,4)),
        mapping = aes(x = x)) +
   stat_function(mapping = aes(color = "Dist. Normal"),
-                fun = dnorm) +
+                fun = dnorm, size = 2) +
   stat_function(mapping = aes(color = paste("Dist. t; n =",n1)),
                 fun = dt,
                 args = list(df = n1-1)) +
