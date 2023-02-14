@@ -306,20 +306,32 @@ Pacotes, funções e base de dados utilizadas no capítulo
 <p><em>A remoção da área de mangue implica na redução da captura de carbono</em>.</p>
 </blockquote>
 <p>Todas estas afirmações são na realidade <strong>hipóteses</strong>, sobre um ou mais parâmetros de uma população estatística que podem ser testadas por meio de experimentos adequados. A experimentação nos permite tirar conclusões sobre determitada hipótese com base na amostra. Mais especificamente, queremos saber se os dados em mãos nos permitem ou não refutar uma hipótese inicial. Portanto, se desejamos fazer uma inferência sobre um parâmetro da população estatística (ex.: sua média <span class="math inline">\(\mu\)</span>), devemos iniciar com uma afirmação sobre a posição deste parâmetro, que denominamos de <strong>hipótese nula</strong> (<span class="math inline">\(H_0\)</span>).</p>
-<p>Vamos a um exemplo simples;</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Um exemplo
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <blockquote class="blockquote">
 <p>Imagine que um modelo de climático estabeleça que a pluviosidade média entre junho e agosto nas cidades litorâneas do estado de São Paulo seja de <span class="math inline">\(110\)</span> mm/mês.</p>
 </blockquote>
-<p>Um cientista acredita que o modelo têm falhas e resolve tomar algumas observações sobre chuva mensal a fim de testar esta afirmação. Este cientista inicia formulando suas <strong>hipóteses estatísticas</strong>.</p>
+<p>Um cientista acredita que o modelo têm falhas e resolve tomar algumas observações sobre chuva mensal a fim de testar esta afirmação. Este cientista inicia formulando as <strong>hipóteses estatísticas</strong>, definindo o <strong>limite de rejeição</strong>, conduzindo o <strong>experimento</strong>, e por fim realizando o <strong>teste de hipóteses</strong>.</p>
 <ol type="1">
-<li><strong>Hipotese nula (<span class="math inline">\(H0\)</span>)</strong>: Inicialmente será necessário estabelecer o que chamamos de hipótese nula. Se uma análise estatística concluir que a hipótese nula deve ser <strong>falsa</strong>, então precisaremos ter me mãos uma hipótese <strong>alternativa</strong> (<span class="math inline">\(H_a\)</span>). Assim, no caso de rejeição de <span class="math inline">\(H_0\)</span>, passaremos a assumir <span class="math inline">\(H_a\)</span> como <strong>verdadeira</strong>. Neste exemplo teríamos:</li>
+<li><strong>Hipoteses estatísticas</strong>: inicialmente é necessário estabelecer o que chamamos de hipótese nula. Se uma análise estatística concluir que a hipótese nula deve ser <strong>falsa</strong>, então precisaremos ter me mãos uma hipótese <strong>alternativa</strong> (<span class="math inline">\(H_a\)</span>). Assim, no caso de rejeição de <span class="math inline">\(H_0\)</span>, passaremos a assumir <span class="math inline">\(H_a\)</span> como <strong>verdadeira</strong>. Neste exemplo teríamos:</li>
 </ol>
 <p><span class="math inline">\(H_0: \mu = 110\)</span> mm de chuva (HIPÓTESE NULA)</p>
 <p><span class="math inline">\(H_a: \mu \ne 110\)</span> mm de chuva (HIPÓTESE ALTERNATIVA)</p>
 <ol start="2" type="1">
-<li><p><strong>Limite de rejeição</strong>: O segundo passo é decidir sobre o limite de rejeição, isto é, um limite a partir do qual iremos conlcuir que <span class="math inline">\(H_0\)</span> é falsa. Este limite está baseado no que denominamos de <strong>nível de significância</strong> (<span class="math inline">\(\alpha\)</span>) sobre o qual iremos falar adiante.</p></li>
-<li><p><strong>Experimentação</strong>: O terceiro passo é montar um experimento que nos permita testar a hipótese nula, tomando amostras sobre o fenômeno em questão. Note que as hipóteses nula e alternativa se referem a predições sobre a posição da <strong>média populaçional</strong> <span class="math inline">\(\mu\)</span>, que é justamente a informação que não temos, mas sobre a qual queremos conhecer. Como não temos acesso à <span class="math inline">\(\mu\)</span>, nossa opção é tomar amostras do fenômenoe (i.e.&nbsp;quantidade de chuva em diferentes localidades), calcular a média amostral <span class="math inline">\(\overline{X}\)</span> e compará-la com a média populacional descrita em <span class="math inline">\(H_0\)</span>.</p></li>
+<li><p><strong>Limite de rejeição</strong>: é o limite a partir do qual iremos conlcuir que <span class="math inline">\(H_0\)</span> é falsa. Este limite está baseado no que denominamos de <strong>nível de significância</strong> (<span class="math inline">\(\alpha\)</span>) sobre o qual iremos falar adiante.</p></li>
+<li><p><strong>Experimentação</strong>: tomar amostras sobre o fenômeno em questão que nos permita tirar alguma conlusão sobre a veracidade de de <span class="math inline">\(H_0\)</span>. Note que as hipóteses nula e alternativa se referem a predições sobre a posição da <strong>média populaçional</strong> <span class="math inline">\(\mu\)</span>, que é justamente a informação que não temos, mas sobre a qual queremos conhecer. Como não temos acesso à <span class="math inline">\(\mu\)</span>, nossa opção é tomar amostras do fenômeno (i.e.&nbsp;quantidade de chuva em diferentes localidades), calcular a média amostral <span class="math inline">\(\overline{X}\)</span> e compará-la com a média populacional descrita em <span class="math inline">\(H_0\)</span>.</p></li>
+<li><p><strong>Teste de hipóteses</strong>: é o teste formal que nos permite dizer, com base nos resultados do experimento se há evidências suficiente para rejeitar <span class="math inline">\(H_0\)</span>. Se não houver, concluímos que <span class="math inline">\(H_0\)</span> é verdadeira. Caso contrário assumimos <span class="math inline">\(H_0\)</span> como falsa e acitamos a hipótese alternativa <span class="math inline">\(H_a\)</span>.</p></li>
 </ol>
+</div>
+</div>
 <section id="probabilidade-e-teste-de-hipóteses" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="probabilidade-e-teste-de-hipóteses"><span class="header-section-number">6.1</span> Probabilidade e teste de hipóteses</h2>
 <p>A média <span class="math inline">\(\overline{X}\)</span> de uma amostra será nossa melhor evidência a respeito de <span class="math inline">\(\mu\)</span>. Tendo este valor, podemos nos perguntar:</p>
@@ -377,15 +389,33 @@ Pacotes, funções e base de dados utilizadas no capítulo
 </section>
 <section id="exemplificando-um-teste-de-hipóteses-o-teste-z" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="exemplificando-um-teste-de-hipóteses-o-teste-z"><span class="header-section-number">6.2</span> Exemplificando um teste de hipóteses: o teste <span class="math inline">\(Z\)</span></h2>
-<p>Digamos que o número de batimentos cardíacos por minuto de um adulto em repouso tenha média <span class="math inline">\(\mu = 65\)</span> e desvio padrão <span class="math inline">\(\sigma = 9\)</span>. Você imagina que o sedentarismo altera o batimento médio de um adulto. Para testar esta suposição você deve inicialmente determinar as hipóteses nula e alternativa:</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Descrição do problema
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Digamos que o número de batimentos cardíacos por minuto de um adulto em repouso tenha média <span class="math inline">\(\mu = 65\)</span> e desvio padrão <span class="math inline">\(\sigma = 9\)</span>. Você imagina que o sedentarismo altera o batimento médio de um adulto.</p>
+</div>
+</div>
+<ol type="1">
+<li><strong>Hipóteses estatíticas</strong>:</li>
+</ol>
 <p><span class="math inline">\(H_0: \mu = 65\)</span> batimentos por minuto</p>
 <p><span class="math inline">\(H_a: \mu \ne 65\)</span> batimentos por minuto</p>
-<p>Em seguida você determina o nível de significância (<span class="math inline">\(\alpha\)</span>) do teste. Vamos determinar que queremos fazer o teste ao nível de significância <span class="math inline">\(\alpha = 0,05\)</span>.</p>
+<ol start="2" type="1">
+<li><strong>Limite de rejeição</strong>: determinamos o nível de significância (<span class="math inline">\(\alpha\)</span>) do teste como <span class="math inline">\(\alpha = 0,05\)</span>.</li>
+</ol>
 <blockquote class="blockquote">
 <p>IMPORTANTE: O nível de significância <span class="math inline">\(\alpha\)</span> deve ser determinado <strong>antes</strong> da tomada de dados.</p>
 </blockquote>
-<p>Finalmente, você seleciona <em>ao acaso</em> <span class="math inline">\(n = 15\)</span> pessoas de hábito sedentário e mede seus batimentos cardíacos.</p>
-<p>Os resultados obtidos desta amotra <em>aleatória</em> são:</p>
+<ol start="3" type="1">
+<li><strong>Experimento</strong>: selecionamos uma amostra <strong>aleratória</strong> selecionando <em>ao acaso</em> <span class="math inline">\(n = 15\)</span> pessoas de hábito sedentário e medimos seus batimentos cardíacos. Os resultados são:</li>
+</ol>
 <div class="cell">
 
 </div>
@@ -394,9 +424,11 @@ Pacotes, funções e base de dados utilizadas no capítulo
 <p><span class="math inline">\(\overline{X} = \frac{\sum{X_i}}{n} = \frac{65+73+56+71+69+69+68+59+73+68+69+64+67+64+66}{15} = 66.73\)</span> batimentos por minuto;</p>
 <p>e um erro padrão de:</p>
 <p><span class="math inline">\(\sigma_{\mu} = \frac{\sigma}{\sqrt{n}} = \frac{9}{3.87} = 2.32\)</span></p>
-<p>Com estes resultados encontramos o valor correspondente de Z.</p>
+<ol start="4" type="1">
+<li><strong>Teste de hipóteses</strong>: com estes resultados encontramos o valor correspondente de Z.</li>
+</ol>
 <p><span class="math inline">\(z = \frac{\overline{X} - \mu}{\sigma_{\mu}} = \frac{66.73 - 65}{2.32} = 0.75\)</span></p>
-<p>Utilizando a Tabela Z, encontramos a probabilidade de obtermos valores tão ou mais extremos que <span class="math inline">\(-0.75\)</span> e <span class="math inline">\(+0.75\)</span>.</p>
+<p>e utilizando a <a href="https://github.com/FCopf/amostragem-inferencia/blob/main/qmd/02-Inferencia_teste_hipoteses/img/Tabela_Z.pdf" target="_blank">Tabela Z</a> , encontramos a probabilidade de obtermos valores tão ou mais extremos que <span class="math inline">\(-0.75\)</span> e <span class="math inline">\(+0.75\)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-limite-tz" class="quarto-figure quarto-figure-center anchored">
@@ -436,7 +468,7 @@ Teste Z no R
 <blockquote class="blockquote">
 <p>sendo <span class="math inline">\(H_0\)</span> <strong>verdadeira</strong>, existe uma probabilidade igual a <span class="math inline">\(0.453\)</span> de que a média de uma amostra com <span class="math inline">\(n = 15\)</span> esteja tão ou mais distante de <span class="math inline">\(\mu = 65\)</span> como observado neste experimento.</p>
 </blockquote>
-<p>Se aceitarmos que esta probabilidade é <strong>alta</strong>, então não há motivo para buscar por outras explicações. Por outro lado, se concluirmo que esta probabilidade é <strong>baixa</strong>, estamos dizendo que resultado obtido é <strong>improvável</strong> segundo a hipótese nula. Neste caso, temos espaço para buscar por hipóteses <strong>alternativas</strong> que possam explicar o fenômeno.</p>
+<p>Se aceitarmos que esta probabilidade é <strong>alta</strong>, então não há motivo para buscar por outras explicações. Por outro lado, se concluirmos que esta probabilidade é <strong>baixa</strong>, estamos dizendo que resultado obtido é <strong>improvável</strong> segundo a hipótese nula. Neste caso, devemos recorrer à hipótese <strong>alternativa</strong> para explicar o fenômeno.</p>
 <p>Para decidir se a probabilidade obtida é alta ou baixa, devemos compará-la ao nível de significância <span class="math inline">\(\alpha\)</span> pré-estabelecido. <span class="math inline">\(H_0\)</span> será aceita somente se a probabilidade encontrada for <strong>maior</strong> que <span class="math inline">\(\alpha\)</span>. Por outro lado, se nossa probabilidade for <strong>menor ou igual</strong> a <span class="math inline">\(\alpha\)</span>, considerarmos os resultados improváveis segundo a hipótese nula e <strong>rejeitamos</strong> <span class="math inline">\(H_0\)</span> em favor de <span class="math inline">\(H_a\)</span>.</p>
 <p>Um nível crítico comumente utilizado é <span class="math inline">\(\alpha = 0.05\)</span>. No exemplo acima a probabilidade foi de 0.453, um valor muito acima de <span class="math inline">\(0.05\)</span>. Dizemos portanto, que a média amostral <span class="math inline">\(\overline{X}\)</span> não está tão distante do <span class="math inline">\(\mu\)</span> a ponto de rejeitarmos <span class="math inline">\(H_0\)</span>.</p>
 <blockquote class="blockquote">
@@ -485,7 +517,7 @@ Teste Z no R
 <div id="fig-alfa-beta" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="04-testehipot_files/figure-html/fig-alfa-beta-1.png" class="img-fluid figure-img" width="768"></p>
-<p></p><figcaption class="figure-caption">Figura&nbsp;6.4: Relação entre <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>, ao aceitar ou rejeitar <span class="math inline">\(H_0\)</span>.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;6.4: Relação entre o erro tipo I (<span class="math inline">\(\alpha\)</span>) e o erro tipos II (<span class="math inline">\(\beta\)</span>), ao aceitar ou rejeitar <span class="math inline">\(H_0\)</span>.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -495,6 +527,20 @@ Teste Z no R
 </section>
 <section id="estabelecendo-a-hipótese-alternativa-testes-bicaudais-e-unicaudais" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="estabelecendo-a-hipótese-alternativa-testes-bicaudais-e-unicaudais"><span class="header-section-number">6.5</span> Estabelecendo a hipótese alternativa: testes Bicaudais e Unicaudais</h2>
+<hr>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Vídeo-aulas
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/LJJVcdAag24" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div>
+</div>
 
 
 </section>
