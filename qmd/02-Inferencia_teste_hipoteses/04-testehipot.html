@@ -252,7 +252,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#exemplificando-um-teste-de-hipóteses-o-teste-z" id="toc-exemplificando-um-teste-de-hipóteses-o-teste-z" class="nav-link" data-scroll-target="#exemplificando-um-teste-de-hipóteses-o-teste-z"><span class="toc-section-number">6.2</span>  Exemplificando um teste de hipóteses: o teste <span class="math inline">\(Z\)</span></a></li>
   <li><a href="#tomada-de-decisão-sobre-h_0-nível-de-significância" id="toc-tomada-de-decisão-sobre-h_0-nível-de-significância" class="nav-link" data-scroll-target="#tomada-de-decisão-sobre-h_0-nível-de-significância"><span class="toc-section-number">6.3</span>  Tomada de decisão sobre <span class="math inline">\(H_0\)</span>: nível de significância</a></li>
   <li><a href="#erros-de-decisão-em-um-teste-de-hipóteses" id="toc-erros-de-decisão-em-um-teste-de-hipóteses" class="nav-link" data-scroll-target="#erros-de-decisão-em-um-teste-de-hipóteses"><span class="toc-section-number">6.4</span>  Erros de decisão em um teste de hipóteses</a></li>
-  <li><a href="#estabelecendo-a-hipótese-alternativa-testes-bicaudais-e-unicaudais" id="toc-estabelecendo-a-hipótese-alternativa-testes-bicaudais-e-unicaudais" class="nav-link" data-scroll-target="#estabelecendo-a-hipótese-alternativa-testes-bicaudais-e-unicaudais"><span class="toc-section-number">6.5</span>  Estabelecendo a hipótese alternativa: testes Bicaudais e Unicaudais</a></li>
+  <li><a href="#estabelecendo-a-hipótese-alternativa-testes-bilaterais-vs-unilaterais" id="toc-estabelecendo-a-hipótese-alternativa-testes-bilaterais-vs-unilaterais" class="nav-link" data-scroll-target="#estabelecendo-a-hipótese-alternativa-testes-bilaterais-vs-unilaterais"><span class="toc-section-number">6.5</span>  Estabelecendo a hipótese alternativa: testes bilaterais <em>vs</em> unilaterais</a></li>
   </ul>
 </nav>
     </div>
@@ -362,7 +362,7 @@ Um exemplo
 <div id="fig-limite-rej" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="04-testehipot_files/figure-html/fig-limite-rej-1.png" class="img-fluid figure-img" width="768"></p>
-<p></p><figcaption class="figure-caption">Figura&nbsp;6.1: Representação da parea de rejeição para a distribuição Z.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;6.1: Representação da área de rejeição na distribuição Z.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -414,7 +414,7 @@ Descrição do problema
 <p>IMPORTANTE: O nível de significância <span class="math inline">\(\alpha\)</span> deve ser determinado <strong>antes</strong> da tomada de dados.</p>
 </blockquote>
 <ol start="3" type="1">
-<li><strong>Experimento</strong>: selecionamos uma amostra <strong>aleratória</strong> selecionando <em>ao acaso</em> <span class="math inline">\(n = 15\)</span> pessoas de hábito sedentário e medimos seus batimentos cardíacos. Os resultados são:</li>
+<li><strong>Experimento</strong>: selecionamos uma amostra <strong>aleatória</strong> selecionando <em>ao acaso</em> <span class="math inline">\(n = 15\)</span> pessoas de hábito sedentário e medimos seus batimentos cardíacos. Os resultados são:</li>
 </ol>
 <div class="cell">
 
@@ -525,8 +525,44 @@ Teste Z no R
 <p>Idealmente em um teste estatístico, seria interessante reduzir ao máximo os erros do tipo I e II. Ao reduzirmos o erro do tipo I, diminuindo <span class="math inline">\(\alpha\)</span> teremos um teste mais rigoroso que raramente iria errar ao rejeitar um <span class="math inline">\(H_0\)</span> verdadeiro (Figura A). Entretanto, este teste também <strong>raramente</strong> iria rejeitar <span class="math inline">\(H_0\)</span> ainda que ele seja falso (Figura B). Consequentemente, ao diminuir o valor de <span class="math inline">\(\alpha\)</span> ficamos menos propensos a cometer o erro do tipo I, porém <strong>mais propensos</strong> a incorrer no erro tipo II, isto é, não rejeitar uma <span class="math inline">\(H_0\)</span> falsa.</p>
 <p>Dadas estas características, o único modo que reduzir os dois tipos de erros <strong>simultaneamente</strong> é aumentando o tamanho amostral <span class="math inline">\(n\)</span> pois, neste caso, reduzimos o erro padrão (<span class="math inline">\(\sigma_{\overline{X}}\)</span>) e consequentemente a sobreposição entre as duas curvas acima.</p>
 </section>
-<section id="estabelecendo-a-hipótese-alternativa-testes-bicaudais-e-unicaudais" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="estabelecendo-a-hipótese-alternativa-testes-bicaudais-e-unicaudais"><span class="header-section-number">6.5</span> Estabelecendo a hipótese alternativa: testes Bicaudais e Unicaudais</h2>
+<section id="estabelecendo-a-hipótese-alternativa-testes-bilaterais-vs-unilaterais" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="estabelecendo-a-hipótese-alternativa-testes-bilaterais-vs-unilaterais"><span class="header-section-number">6.5</span> Estabelecendo a hipótese alternativa: testes bilaterais <em>vs</em> unilaterais</h2>
+<p>A hipótese alternativa estabelece nossa expectativa para a explicação dos resultados de um experimento no caso de <span class="math inline">\(H_0\)</span> ser falsa. Os testes que descrevemos acima são chamados <strong>testes bilaterais ou bicaudais</strong>. Isto significa que sendo <span class="math inline">\(H_0\)</span> falsa, podemos esperar que a média populacional esteja tanto acima quanto abaixo de <span class="math inline">\(\mu\)</span>. Existem situações, no entanto, para as quais já temos uma expectativa <em>a priori</em> com base no conhecimento prévio sobre o fenêmeno estudado.</p>
+<p>Voltemos ao exemplo sobre a frequência cardíaca. Sabemos que o sedentarismo, tende a elevar a frequência cardíaca em repouso. Deste modo, o problema poderia ser estabelecido da seguinte forma.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Descrição do problema
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Digamos que o número de batimentos cardíacos por minuto de um adulto em repouso tenha média <span class="math inline">\(\mu = 65\)</span> e desvio padrão <span class="math inline">\(\sigma = 9\)</span>. A literatura sugere que o <strong>sedentarismo</strong> aumenta o batimento médio de um adulto.</p>
+</div>
+</div>
+<p>O problema agora estabelece que no caso de rejeição de <span class="math inline">\(H_0\)</span>, a frequência cardíaca deveia ser maior que 65 batimentos por minuto. Deste modo teremos como hipóteses estatísticas:</p>
+<ol type="1">
+<li><strong>Hipóteses estatíticas</strong>:</li>
+</ol>
+<p><span class="math inline">\(H_0: \mu = 65\)</span> batimentos por minuto</p>
+<p><span class="math inline">\(H_a: \mu \gt 65\)</span> batimentos por minuto</p>
+<p>A mudança aqui está em <span class="math inline">\(H_a\)</span> que estabelece que na hipótese de rejeição de <span class="math inline">\(H_0\)</span>, esperamos <strong>somente</strong> que a frequencia cardíaca aumente.</p>
+<p>Esta modificação na construção das hipóteses estatísticas tem implicação na definição do limite de rejeição.</p>
+<ol start="2" type="1">
+<li><strong>Limite de rejeição</strong>: se definimos <span class="math inline">\(\alpha = 0,05\)</span>, e <span class="math inline">\(H_a: \mu \gt 65\)</span>, temos que a área de rejeição será expressa <strong>acima</strong> de 65 batimentos por minuto.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-norm-unil" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="04-testehipot_files/figure-html/fig-norm-unil-1.png" class="img-fluid figure-img" width="768"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;6.5: Área de rejeição em um teste unilateral com <span class="math inline">\(\alpha = 0,05\)</span>.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 <hr>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
