@@ -325,7 +325,7 @@ Intervalo de confiança: definição
 <blockquote class="blockquote">
 <p>O valor <span class="math inline">\(z_{\alpha/2} = 1.96\)</span> foi retirado da Tabela <span class="math inline">\(Z\)</span> como o módulo do valor de <span class="math inline">\(z\)</span> que delimida uma área inferior igual a <span class="math inline">\(0.025\)</span>.</p>
 </blockquote>
-<p>Se queremos um nível de confiança diferente, basta ajustar o valor de <span class="math inline">\(\alpha\)</span>. Por exemplo, se queremos um nível de significância a 99%, fixamos <span class="math inline">\(\alpha\)</span> em <span class="math inline">\(0.01\)</span> e portanto <span class="math inline">\(z = 2.58\)</span>. Da mesma forma, o <span class="math inline">\(IC_{90\%}\)</span> poderá ser obtido com <span class="math inline">\(\alpha = 0.10\)</span> e consequentemente <span class="math inline">\(z = 1.64\)</span>. Estes e outros limites descrevem as probabilidades em uma distribuição normal padronizada (<a href="01-norm.html"><span>Capítulo&nbsp;3</span></a>), que podem ser obtidos com o uso da maioria dos softwares estatísticos, além de estarem incluso na <a href="https://github.com/FCopf/amostragem-inferencia/blob/main/qmd/02-Inferencia_teste_hipoteses/img/Tabela_Z.pdf" target="_blank">Tabela Z</a>, encontrada na grande maioria dos livros de estatística básica. Os valores de <span class="math inline">\(Z\)</span> são os mesmos discutidos no tópico <a href="https://fcopf.github.io/visualizacao-de-dados/qmd/02_dados_univariados/06-escorez.html" target="_blank">Medidas de posição</a>.</p>
+<p>Se queremos um nível de confiança diferente, basta ajustar o valor de <span class="math inline">\(\alpha\)</span>. Por exemplo, se queremos um nível de significância a 99%, fixamos <span class="math inline">\(\alpha\)</span> em <span class="math inline">\(0.01\)</span> e portanto <span class="math inline">\(z = 2.58\)</span>. Da mesma forma, o <span class="math inline">\(IC_{90\%}\)</span> poderá ser obtido com <span class="math inline">\(\alpha = 0.10\)</span> e consequentemente <span class="math inline">\(z = 1.64\)</span>. Estes e outros limites descrevem as probabilidades em uma distribuição normal padronizada (<a href="01-norm.html"><span>Capítulo&nbsp;3</span></a>), que podem ser obtidos com o uso da maioria dos softwares estatísticos, além de estarem incluso na <a href="https://github.com/FCopf/amostragem-inferencia/blob/main/files/Tabela_Z.pdf" target="_blank">Tabela Z</a>, encontrada na grande maioria dos livros de estatística básica. Os valores de <span class="math inline">\(Z\)</span> são os mesmos discutidos no tópico <a href="https://fcopf.github.io/visualizacao-de-dados/qmd/02_dados_univariados/06-escorez.html" target="_blank">Medidas de posição</a>.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -349,12 +349,12 @@ Intervalo de confiança: definição
 <p><span class="math display">\[IC_{1-\alpha} = \overline{X} \pm t_{\alpha/2, gl} \times \frac{s}{\sqrt{n}}\]</span></p>
 <p>Em que <span class="math inline">\(\alpha\)</span> continua sendo o nível de significância e <span class="math inline">\(gl\)</span> é definido como os <strong>graus de liberdade</strong>. Neste caso, os graus de liberdade são dados por:</p>
 <p><span class="math display">\[gl = n-1\]</span></p>
-<p>O formato da distribuição <span class="math inline">\(t\)</span> de student não é constante. À medida que o tamanho amostral aumenta, o formado da distribuição <span class="math inline">\(t\)</span> converge para a distribuição normal. Isto faz com que na prática <strong>raremente</strong> se utilize a distribuição <span class="math inline">\(Z\)</span>, substituindo-a pela distribuição <span class="math inline">\(t\)</span> de Student.</p>
+<p>O formato da distribuição <span class="math inline">\(t\)</span> de student não é constante. À medida que o tamanho amostral aumenta, o formado da distribuição <span class="math inline">\(t\)</span> converge para a distribuição normal. Isto faz com que na prática <strong>raremente</strong> se utiliza a distribuição <span class="math inline">\(Z\)</span>, substituindo-a pela distribuição <span class="math inline">\(t\)</span> de Student.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-dist-t" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="03-inferencia_files/figure-html/fig-dist-t-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-inferencia_files/figure-html/fig-dist-t-1.png" class="img-fluid figure-img" width="768"></p>
 <p></p><figcaption class="figure-caption">Figura&nbsp;5.2: Função de densidade de t para diferentes graus de liberdade.</figcaption><p></p>
 </figure>
 </div>

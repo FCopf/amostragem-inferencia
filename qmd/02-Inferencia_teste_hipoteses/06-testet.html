@@ -20,6 +20,88 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -59,7 +141,9 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<link href="../../site_libs/tabwid-1.1.2/tabwid.css" rel="stylesheet">
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -179,7 +263,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Conteúdo</h2>
+   
+  <ul class="collapse">
+  <li><a href="#teste-t-para-uma-média-populacional" id="toc-teste-t-para-uma-média-populacional" class="nav-link active" data-scroll-target="#teste-t-para-uma-média-populacional"><span class="toc-section-number">8.1</span>  Teste t para uma média populacional</a></li>
+  <li><a href="#graus-de-liberdade" id="toc-graus-de-liberdade" class="nav-link" data-scroll-target="#graus-de-liberdade"><span class="toc-section-number">8.2</span>  Graus de liberdade</a></li>
+  <li><a href="#probabilidades-no-teste-t-de-student-a-tabela-t" id="toc-probabilidades-no-teste-t-de-student-a-tabela-t" class="nav-link" data-scroll-target="#probabilidades-no-teste-t-de-student-a-tabela-t"><span class="toc-section-number">8.3</span>  Probabilidades no teste <span class="math inline">\(t\)</span> de Student: a tabela <span class="math inline">\(t\)</span></a></li>
+  <li><a href="#teste-t-para-comparação-de-duas-médias-independentes" id="toc-teste-t-para-comparação-de-duas-médias-independentes" class="nav-link" data-scroll-target="#teste-t-para-comparação-de-duas-médias-independentes"><span class="toc-section-number">8.4</span>  Teste t para comparação de duas médias independentes</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -215,13 +308,220 @@ Pacotes, funções e base de dados utilizadas no capítulo
 <div class="callout-body-container callout-body">
 <p>Pacotes:</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(flextable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
 
 </div>
+<p>De acordo com o que discutimos no capítulo <a href="03-inferencia.html"><span>Capítulo&nbsp;5</span></a>, o modelo normal de probabilidades não é a melhor aproximação para a distribuição das médias amostrais quando não conhecemos <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> e/ou quando o tamanho amostral <span class="math inline">\(n\)</span> é pequeno. Nesta situação, a <strong>distribuição t de Student</strong> é mais apropriada para o cálculo do intervalo de confiança. Da mesma forma, o <strong>teste <span class="math inline">\(Z\)</span></strong> que introduzimos no capítulo <a href="04-testehipot.html"><span>Capítulo&nbsp;6</span></a> assume que a distribuição das médias amostrais é normalmente distribuída e que a variância populacional <span class="math inline">\(\sigma\)</span> seja conhecida, uma informação que não temos na prática científica.</p>
+<p>O <strong>teste t de Student</strong> é utilizado em substituição ao <strong>teste <span class="math inline">\(Z\)</span></strong> quando <span class="math inline">\(\sigma\)</span> é desconhecido e/ou o tamanho amostral é pequeno. A lógica do teste é a mesma apresentada discutida no teste <span class="math inline">\(Z\)</span>, porém estabelece que a distribuição das médias amostrais é melhor descrita pela distribuição <span class="math inline">\(t\)</span> e não pela distribuição normal.</p>
+<div id="fig-Z_vs_T_distribution" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/Z_vs_T_distribution.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;8.1: Teste Z versus teste t. Estatística do teste e distribuição de probabilidades.</figcaption><p></p>
+</figure>
 </div>
+<section id="teste-t-para-uma-média-populacional" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="teste-t-para-uma-média-populacional"><span class="header-section-number">8.1</span> Teste t para uma média populacional</h2>
+<p>Considere um exemplo simples. Dados do Banco Central do Brasil dizem que moedas de <span class="math inline">\(R\$ 0,10\)</span> da segunda geração pesam 4.8 gramas. Você tem <span class="math inline">\(8\)</span> moedas no bolso e resolve testar essa afirmação pesando cada moeda. Os pesos obtidos são: <span class="math inline">\(X = 5.1, 5, 4.8, 5, 5, 4.9, 4.9, 4.7\)</span>.</p>
+<p>Inicialmente, devemos estabelecer nossa hipótese nula (<span class="math inline">\(H_0\)</span>), nossa hipótese alternativa (<span class="math inline">\(H_a\)</span>) e o nível se significância <span class="math inline">\(\alpha\)</span>. Iremos estabelecer <span class="math inline">\(\alpha = 0,05\)</span> e as hipóteses como:</p>
+<p><span class="math inline">\(H_0: \mu = 4.8\)</span> gramas</p>
+<p><span class="math inline">\(H_a: \mu \ne 4.8\)</span> gramas</p>
+<p>Como não conhecemos <span class="math inline">\(\sigma\)</span> e temos uma amostra pequena, a posição das médias amostrais seguirá uma distribuição <span class="math inline">\(t\)</span> de Student e a estatística do teste será:</p>
+<p><span class="math display">\[t = \frac{\overline{X} - \mu}{s_{\overline{X}}}\]</span></p>
+<p>sendo o erro padrão amostral obtido por:</p>
+<p><span class="math display">\[s_{\overline{X}} = \frac{s}{\sqrt{n}}\]</span></p>
+<p>O cálculo de <span class="math inline">\(t\)</span> é muito similar ao escore <span class="math inline">\(Z\)</span>. No entanto, substituímos <span class="math inline">\(\sigma\)</span> por <span class="math inline">\(s\)</span>. Como visto no capítulo <a href="03-inferencia.html"><span>Capítulo&nbsp;5</span></a>, as distribuições de <span class="math inline">\(t\)</span> e de <span class="math inline">\(Z\)</span> são muito similares. Entretanto, para amostras pequenas e quando <span class="math inline">\(\sigma\)</span> é desconhecido, a curva de <span class="math inline">\(t\)</span> nos fornece uma melhor estimativa das probabilidades associadas a distribuição das médias amostrais.</p>
+<p>Para este exemplo, temos uma amostra de tamanho <span class="math inline">\(n = 8\)</span> com média <span class="math inline">\(\overline{X} = 4.925\)</span>g e desvio padrão <span class="math inline">\(s = 0.13\)</span>g. O valor de <span class="math inline">\(t\)</span> pode ser calculado por:</p>
+<p><span class="math display">\[t_{c} = \frac{\overline{X} - \mu}{s_{\overline{X}}} = \frac{\overline{X} - \mu}{\frac{s}{\sqrt{n}}} = \frac{4.925  - 4.8}{\frac{0.13}{\sqrt{8}}} = 2.76\]</span></p>
+<p>Assim como fizemos para a distribuição <span class="math inline">\(Z\)</span>, devemos encontrar a probabilidade de obtermos um valor tão ou maior que o módulo de <span class="math inline">\(t_c\)</span>. Na figura abaixo, nosso resultado fica:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-limite-rej-t" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="06-testet_files/figure-html/fig-limite-rej-t-1.png" class="img-fluid figure-img" width="768"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;8.2: Valor de p associado ao resultado do teste t.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A probabilidade de encontrarmos um valor de <span class="math inline">\(t_c\)</span> tão ou mais extremo segundo a hipótese nula foi de <span class="math inline">\(p = 0.028\)</span>. Uma vez que este valor é <strong>menor</strong> que o nível crítico <span class="math inline">\(\alpha = 0,05\)</span>, concluímos que existe evidência suficiente para <strong>rejeitar</strong> <span class="math inline">\(H_0\)</span> e <strong>aceitar</strong> a hipótese alternativa de que as moedas de <span class="math inline">\(10\)</span> centavos <strong>não</strong> provém de uma população estatística com <span class="math inline">\(\mu = 4,8\)</span> gramas. Nossa conclusão é portanto, que as moedas de <span class="math inline">\(R\$ 0,10\)</span> são mais <strong>pesadas</strong> que <span class="math inline">\(4,8\)</span> gramas.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Terste t no R
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(X, <span class="at">mu =</span> <span class="fl">4.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  X
+t = 2.7584, df = 7, p-value = 0.02816
+alternative hypothesis: true mean is not equal to 4.8
+95 percent confidence interval:
+ 4.817844 5.032156
+sample estimates:
+mean of x 
+    4.925 </code></pre>
+</div>
+</div>
+<hr>
+<p>Nos comandos acima, <span class="math inline">\(X\)</span> é a amostra e o argumento <code>mu</code> representa a expectativa sobre a média populacional <em>segundo <span class="math inline">\(H_0\)</span></em>. Como resultados temos:</p>
+<ul>
+<li><p>a indicação de que fizemos um <em>teste <span class="math inline">\(t\)</span></em> para uma amostra: <code>One Sample t-test</code>;</p></li>
+<li><p>o valor de <span class="math inline">\(t\)</span> calculado: <code>t = 2.7584</code>;</p></li>
+<li><p>os graus de liberdade: <code>df = 8 - 1 = 7</code>; e</p></li>
+<li><p>o valor de <code>p = 0.028</code>.</p></li>
+</ul>
+<p>A saída da função apresenta ainda o valor da média amostral (<span class="math inline">\(\overline{X} = 4.925\)</span>) e o intervalo de confiança a <span class="math inline">\(95\%\)</span> (<code>4.817844 - 5.032156</code>).</p>
+</div>
+</div>
+</section>
+<section id="graus-de-liberdade" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="graus-de-liberdade"><span class="header-section-number">8.2</span> Graus de liberdade</h2>
+<p>A distribuição <span class="math inline">\(t\)</span> como várias outras distribuições amostrais utilizadas em inferência estatística, muda seu formato em função do que chamamos de <strong>graus de liberdade</strong> (<span class="math inline">\(gl\)</span>). Os graus de liberdade têm relação com o tamanho amostral. No caso do teste <span class="math inline">\(t\)</span> para <span class="math inline">\(1\)</span> amostra, esta relação é simplesmente: <span class="math inline">\(gl = n-1\)</span>.</p>
+<p>À medida que os graus de liberdade aumentam, o formato da distribuição <span class="math inline">\(t\)</span> se assemelha ao formato da distribuição Normal padronizada. De fato, para graus de liberdades altos (ex. <span class="math inline">\(n \ge 30\)</span>), os formatos das distribuições <span class="math inline">\(Z\)</span> e <span class="math inline">\(t\)</span> são praticamente indistinguíveis. Na prática, isto faz que as distribuição <span class="math inline">\(Z\)</span> <strong>raramente</strong> seja utilizada.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-dist-t-gl" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="06-testet_files/figure-html/fig-dist-t-gl-1.png" class="img-fluid figure-img" width="768"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;8.3: Função de densidade de t para diferentes graus de liberdade.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="probabilidades-no-teste-t-de-student-a-tabela-t" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="probabilidades-no-teste-t-de-student-a-tabela-t"><span class="header-section-number">8.3</span> Probabilidades no teste <span class="math inline">\(t\)</span> de Student: a tabela <span class="math inline">\(t\)</span></h2>
+<p>A rejeição uo aceitação da hipótese nula em um teste <span class="math inline">\(t\)</span> pode ser feita por meio da obtenção do <em>valor de p</em> ou pela comparação do <span class="math inline">\(t\)</span> calculado com valores críticos de referência para determinado nível de significância. O primeiro caso foi o que apresentamos acima e depende de um software estatístico para obtermos valores exatos de <span class="math inline">\(p\)</span>. O segundo caso, pode ser feito com auxílio da Tabela <span class="math inline">\(t\)</span>, em que limites críticos de <span class="math inline">\(t\)</span> são disponibilizados para diferentes níveis de significância e graus de liberdade.</p>
+<p>Atualmente, o uso da tabela <span class="math inline">\(t\)</span> têm finalidade em grande parte didática e, por este motivo, vamos apresentá-lo aqui rapidamente. No entanto, fora da sala de aula, o teste <span class="math inline">\(t\)</span> será invariavelmente conduzido por meio de um software estatístico este método que permitirá a obtenção do valor exato de <span class="math inline">\(p\)</span>.</p>
+<p>Na <a href="https://github.com/FCopf/amostragem-inferencia/blob/main/files/Tabela_t.pdf" target="_blank">Tabela t</a>, a primeira coluna mostra os <em>graus de liberdade</em> de <span class="math inline">\(1\)</span> a <span class="math inline">\(120\)</span>. O cabeçalho da tabela de <span class="math inline">\(90\%\)</span> a <span class="math inline">\(0,1\%\)</span> mostra a área na distribuição de <span class="math inline">\(t\)</span> nas caldas inferior e superior.</p>
+<p>Vamos retornar ao exemplo da moedas de <span class="math inline">\(R\$0,10\)</span> para exemplificar sua utilização. Neste exemplo a tinhamos <span class="math inline">\(8\)</span> (<span class="math inline">\(gl = 7\)</span> graus de liberdade) e o teste foi feito com <span class="math inline">\(\alpha =0,05\)</span>. Se buscarmos na linha <span class="math inline">\(gl = 7\)</span> e a coluna <span class="math inline">\(5\%\)</span> (<span class="math inline">\(\alpha = 0,05\)</span>), encontraremos o valor <span class="math inline">\(t = 2,3646\)</span>. Este é o chamado <span class="math inline">\(t\)</span> <strong>crítico</strong> (<span class="math inline">\(t_{crítico}\)</span>). Acima deste valor e abaixo de sua contraparte negativa temos exatamente <span class="math inline">\(5\%\)</span> da área na disribuição <span class="math inline">\(t\)</span>. Deste modo, qualquer valor calulado <strong>maior</strong> que <span class="math inline">\(t_{crítico}\)</span> estará mais para a extremidade da distribuição e consequentemente estará associado a <strong>menores</strong> valores de probabilidade. Neste sentido:</p>
+<blockquote class="blockquote">
+<p><span class="math inline">\(t_{calculado} \ge t_{crítico}\)</span> leva a <em>rejeição</em> de <span class="math inline">\(H_0\)</span></p>
+</blockquote>
+<blockquote class="blockquote">
+<p><span class="math inline">\(t_{calculado} &lt; t_{crítico}\)</span> leva a <em>aceitação</em> de <span class="math inline">\(H_0\)</span></p>
+</blockquote>
+<p>O resultado do teste estatístico em nosso exemplo foi <span class="math inline">\(t_c = 2.76\)</span> que é <strong>maior</strong> que <span class="math inline">\(2,3646\)</span>. Isto nos leva à mesma decisão anterior (<strong>rejeitar</strong> <span class="math inline">\(H_0\)</span>), ainda que por meio da tabela <span class="math inline">\(t\)</span> não tenhamos o valor exato de probabilidade.</p>
+</section>
+<section id="teste-t-para-comparação-de-duas-médias-independentes" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="teste-t-para-comparação-de-duas-médias-independentes"><span class="header-section-number">8.4</span> Teste t para comparação de duas médias independentes</h2>
+<p>O que vimos no teste <span class="math inline">\(t\)</span> para uma amostra pode ser facilmente extendido para testarmos a diferenças entre duas amostras.</p>
+<p>Os dados abaixo mostram o tempo de coagulação sanguínea (em minutos) em ratos machos adultos tratados com dois tipos de drogas, retirado do livro Biostatistical Analysis <span class="citation" data-cites="zar2010biostatistical">(<a href="#ref-zar2010biostatistical" role="doc-biblioref">Zar 2010</a>)</span>, pp.&nbsp;130-134.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ra <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Droga =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"Droga A"</span>, <span class="dv">6</span>), <span class="fu">rep</span>(<span class="st">"Droga B"</span>,<span class="dv">7</span>))),</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">Tempo =</span> <span class="fu">c</span>(<span class="fl">8.8</span>, <span class="fl">8.4</span>, <span class="fl">7.9</span>, <span class="fl">8.7</span>, <span class="fl">9.1</span>, <span class="fl">9.6</span>, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                          <span class="fl">9.9</span>, <span class="fl">9.0</span>, <span class="fl">11.1</span>, <span class="fl">9.6</span>, <span class="fl">8.7</span>, <span class="fl">10.4</span>, <span class="fl">9.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-coagulacao" class="anchored">
+
+<div class="tabwid"><style>.cl-e197c084{}.cl-e192f11c{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e195130c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e1951316{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e19520c2{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e19520c3{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e19520cc{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e19520cd{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e19520ce{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e19520cf{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-e197c084"><caption>Tabela&nbsp;8.1:  Tempo de coagulação sanguínea (em minutos) para dois tipos de drogas. </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-e19520c2"><p class="cl-e195130c"><span class="cl-e192f11c">Droga</span></p></th><th class="cl-e19520c3"><p class="cl-e1951316"><span class="cl-e192f11c">Tempo</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-e19520cc"><p class="cl-e195130c"><span class="cl-e192f11c">Droga A</span></p></td><td class="cl-e19520cd"><p class="cl-e1951316"><span class="cl-e192f11c">8.8</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e19520cc"><p class="cl-e195130c"><span class="cl-e192f11c">Droga A</span></p></td><td class="cl-e19520cd"><p class="cl-e1951316"><span class="cl-e192f11c">8.4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e19520cc"><p class="cl-e195130c"><span class="cl-e192f11c">Droga A</span></p></td><td class="cl-e19520cd"><p class="cl-e1951316"><span class="cl-e192f11c">7.9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e19520cc"><p class="cl-e195130c"><span class="cl-e192f11c">Droga A</span></p></td><td class="cl-e19520cd"><p class="cl-e1951316"><span class="cl-e192f11c">8.7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e19520cc"><p class="cl-e195130c"><span class="cl-e192f11c">Droga A</span></p></td><td class="cl-e19520cd"><p class="cl-e1951316"><span class="cl-e192f11c">9.1</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e19520cc"><p class="cl-e195130c"><span class="cl-e192f11c">Droga A</span></p></td><td class="cl-e19520cd"><p class="cl-e1951316"><span class="cl-e192f11c">9.6</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e19520cc"><p class="cl-e195130c"><span class="cl-e192f11c">Droga B</span></p></td><td class="cl-e19520cd"><p class="cl-e1951316"><span class="cl-e192f11c">9.9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e19520cc"><p class="cl-e195130c"><span class="cl-e192f11c">Droga B</span></p></td><td class="cl-e19520cd"><p class="cl-e1951316"><span class="cl-e192f11c">9.0</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e19520cc"><p class="cl-e195130c"><span class="cl-e192f11c">Droga B</span></p></td><td class="cl-e19520cd"><p class="cl-e1951316"><span class="cl-e192f11c">11.1</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e19520cc"><p class="cl-e195130c"><span class="cl-e192f11c">Droga B</span></p></td><td class="cl-e19520cd"><p class="cl-e1951316"><span class="cl-e192f11c">9.6</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e19520cc"><p class="cl-e195130c"><span class="cl-e192f11c">Droga B</span></p></td><td class="cl-e19520cd"><p class="cl-e1951316"><span class="cl-e192f11c">8.7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e19520cc"><p class="cl-e195130c"><span class="cl-e192f11c">Droga B</span></p></td><td class="cl-e19520cd"><p class="cl-e1951316"><span class="cl-e192f11c">10.4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e19520ce"><p class="cl-e195130c"><span class="cl-e192f11c">Droga B</span></p></td><td class="cl-e19520cf"><p class="cl-e1951316"><span class="cl-e192f11c">9.5</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<p>Nosso objetivo é testar se as duas drogas resultam, em média, no mesmo tempo de coagulação. Inicialmente, vamos fazer um gráfico de dispersão para verificar a distribuição do tempo de coagulação para cada droga.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ra, <span class="fu">aes</span>(<span class="at">y =</span> Tempo, <span class="at">x =</span> Droga)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col =</span> <span class="dv">2</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">'Tempo de coalgulação (min)'</span>, <span class="at">x =</span> <span class="st">''</span>) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-bx-coagulacao" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="06-testet_files/figure-html/fig-bx-coagulacao-1.png" class="img-fluid figure-img" width="576"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;8.4: Distribuição do tempo de coagulação sanguínea (em minutos) para dois tipos de drogas.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>As médias, desvios padrões e tamanhos amostrais de cada grupo são:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ra_m <span class="ot">=</span> ra <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Droga) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="st">'Tempo médio'</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(Tempo),<span class="dv">2</span>), </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">Desvio =</span> <span class="fu">round</span>(<span class="fu">sd</span>(Tempo),<span class="dv">2</span>), <span class="at">n =</span> <span class="fu">n</span>() )</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>ra_m <span class="sc">%&gt;%</span> </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">flextable</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">width</span>(<span class="at">width =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="tbl-coagulacao-summary" class="anchored">
+
+<div class="tabwid"><style>.cl-e1c317b6{}.cl-e1bebf4a{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e1c0ad46{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e1c0ad50{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e1c0b926{width:5in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1c0b927{width:5in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1c0b930{width:5in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1c0b931{width:5in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1c0b932{width:5in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1c0b933{width:5in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-e1c317b6"><caption>Tabela&nbsp;8.2:  Tempo de coagulação sanguínea (em minutos) para dois tipos de drogas. </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-e1c0b926"><p class="cl-e1c0ad46"><span class="cl-e1bebf4a">Droga</span></p></th><th class="cl-e1c0b927"><p class="cl-e1c0ad50"><span class="cl-e1bebf4a">Tempo médio</span></p></th><th class="cl-e1c0b927"><p class="cl-e1c0ad50"><span class="cl-e1bebf4a">Desvio</span></p></th><th class="cl-e1c0b927"><p class="cl-e1c0ad50"><span class="cl-e1bebf4a">n</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-e1c0b930"><p class="cl-e1c0ad46"><span class="cl-e1bebf4a">Droga A</span></p></td><td class="cl-e1c0b931"><p class="cl-e1c0ad50"><span class="cl-e1bebf4a">8.75</span></p></td><td class="cl-e1c0b931"><p class="cl-e1c0ad50"><span class="cl-e1bebf4a">0.58</span></p></td><td class="cl-e1c0b931"><p class="cl-e1c0ad50"><span class="cl-e1bebf4a">6</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e1c0b932"><p class="cl-e1c0ad46"><span class="cl-e1bebf4a">Droga B</span></p></td><td class="cl-e1c0b933"><p class="cl-e1c0ad50"><span class="cl-e1bebf4a">9.74</span></p></td><td class="cl-e1c0b933"><p class="cl-e1c0ad50"><span class="cl-e1bebf4a">0.82</span></p></td><td class="cl-e1c0b933"><p class="cl-e1c0ad50"><span class="cl-e1bebf4a">7</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+<p>Para testarmos se as médias dos grupos provém de populações estatísticas com diferentes <span class="math inline">\(\mu's\)</span> devemos estabelecer nosso nível de significância (por exemplo <span class="math inline">\(\alpha = 0.05\)</span>) as hipoteses estatísticas:</p>
+<p><span class="math inline">\(H_0: \mu_A = \mu_B\)</span> gramas</p>
+<p><span class="math inline">\(H_a: \mu_A \ne \mu_B\)</span> gramas</p>
+<p>O teste t para duas amostras é calculado por:</p>
+<p><span class="math display">\[t = \frac{(\overline{X_A} - \mu_A) - (\overline{X_B} - \mu_B)}{s_{\overline{X_A}-\overline{X_B}}}\]</span></p>
+<p>Assumindo a hipotese nula em que <span class="math inline">\(\mu_A = \mu_B\)</span> a expressão fica</p>
+<p><span class="math display">\[t = \frac{\overline{X_A} - \overline{X_B}}{s_{\overline{X_A}-\overline{X_B}}}\]</span></p>
+<p>em que a quantia <span class="math inline">\(s_{\overline{X_A}-\overline{X_B}}\)</span> é calculada por:</p>
+<p><span class="math display">\[s_{\overline{X_A}-\overline{X_B}} = \sqrt{\frac{s^2_{p}}{n_1} + \frac{s^2_{p}}{n_2}}\]</span></p>
+<p><span class="math inline">\(s_p\)</span> é denominada de <strong>variância conjunta</strong> calculada por</p>
+<p><span class="math display">\[s^2_p = \frac{(n_1 - 1) \times s^2_1 + (n_2 - 1) \times s^2_2}{(n_1 - 1) + (n_2 - 1)}\]</span></p>
+<p>Para este exemplo,</p>
+<div class="cell">
+
+</div>
+<p><span class="math inline">\(s_p = 0.52\)</span></p>
+<p>e</p>
+<p><span class="math inline">\(s_{\overline{X_A}-\overline{X_B}} = 0.4\)</span></p>
+<p>O valor de t calculado é:</p>
+<p><span class="math inline">\(t_c = -2.476\)</span></p>
+<p>Na distribuição t, a probabilidade de encontrar valores tão ou mais extremos que 2.476 é de <span class="math inline">\(p = 0.031\)</span>.</p>
+<p>Portanto:</p>
+<p><span class="math inline">\(P(|t| \ge 2.476) \le 0.05\)</span></p>
+<p>Uma vez que a probabilidade associada ao valor de <span class="math inline">\(t\)</span> é menor que o nível de significância, <strong>rejeitamos</strong> <span class="math inline">\(H_0\)</span> e assumimos que os tempos médios de coagulação <strong>são diferentes</strong>. Ao avaliar as média amostrais <span class="math inline">\(\overline{X}_A\)</span> e <span class="math inline">\(\overline{X}_B\)</span>, concluímos que <strong>a droga <span class="math inline">\(A\)</span></strong> resulta, em média, em tempos menores de coagulação.</p>
+<hr>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Vídeo-aulas
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/Mu4QQr5ud58" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </div>
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-zar2010biostatistical" class="csl-entry" role="doc-biblioentry">
+Zar, Jerrold H. 2010. <span>“Biostatistical Analysis Pearson Prentice-Hall.”</span> <em>Upper Saddle River, NJ</em>.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
