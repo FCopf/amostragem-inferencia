@@ -20,21 +20,29 @@ Um dos objetivos centrais em estatística é fazer inferências válidas para a 
 
 Todas estas afirmações são na realidade **hipóteses**, sobre um ou mais parâmetros de uma população estatística que podem ser testadas por meio de experimentos adequados. A experimentação nos permite tirar conclusões sobre determitada hipótese com base na amostra. Mais especificamente, queremos saber se os dados em mãos nos permitem ou não refutar uma hipótese inicial. Portanto, se desejamos fazer uma inferência sobre um parâmetro da população estatística (ex.: sua média $\mu$), devemos iniciar com uma afirmação sobre a posição deste parâmetro, que denominamos de **hipótese nula** ($H_0$). 
 
-Vamos a um exemplo simples;
+:::{.callout-note}
+
+# Um exemplo
 
 > Imagine que um modelo de climático estabeleça que a pluviosidade média entre junho e agosto nas cidades litorâneas do estado de São Paulo seja de $110$ mm/mês. 
 
-Um cientista acredita que o modelo têm falhas e resolve tomar algumas observações sobre chuva mensal a fim de testar esta afirmação. Este cientista inicia formulando suas **hipóteses estatísticas**. 
+Um cientista acredita que o modelo têm falhas e resolve tomar algumas observações sobre chuva mensal a fim de testar esta afirmação. Este cientista inicia formulando as **hipóteses estatísticas**, definindo o **limite de rejeição**, conduzindo o **experimento**, e por fim realizando o **teste de hipóteses**.
 
-1. **Hipotese nula ($H0$)**: Inicialmente será necessário estabelecer o que chamamos de hipótese nula. Se uma análise estatística concluir que a hipótese nula deve ser **falsa**, então precisaremos ter me mãos uma hipótese **alternativa** ($H_a$). Assim, no caso de rejeição de $H_0$, passaremos a assumir $H_a$ como **verdadeira**. Neste exemplo teríamos:
+
+
+1. **Hipoteses estatísticas**: inicialmente é necessário estabelecer o que chamamos de hipótese nula. Se uma análise estatística concluir que a hipótese nula deve ser **falsa**, então precisaremos ter me mãos uma hipótese **alternativa** ($H_a$). Assim, no caso de rejeição de $H_0$, passaremos a assumir $H_a$ como **verdadeira**. Neste exemplo teríamos:
 
 $H_0: \mu = 110$ mm de chuva (HIPÓTESE NULA)
 
 $H_a: \mu \ne 110$ mm de chuva (HIPÓTESE ALTERNATIVA)
 
-2. **Limite de rejeição**: O segundo passo é decidir sobre o limite de rejeição, isto é, um limite a partir do qual iremos conlcuir que $H_0$ é falsa. Este limite está baseado no que denominamos de **nível de significância** ($\alpha$) sobre o qual iremos falar adiante.
+2. **Limite de rejeição**: é o limite a partir do qual iremos conlcuir que $H_0$ é falsa. Este limite está baseado no que denominamos de **nível de significância** ($\alpha$) sobre o qual iremos falar adiante.
 
-3. **Experimentação**: O terceiro passo é montar um experimento que nos permita testar a hipótese nula, tomando amostras sobre o fenômeno em questão. Note que as hipóteses nula e alternativa se referem a predições sobre a posição da **média populaçional** $\mu$, que é justamente a informação que não temos, mas sobre a qual queremos conhecer. Como não temos acesso à $\mu$, nossa opção é tomar amostras do fenômenoe (i.e. quantidade de chuva em diferentes localidades), calcular a média amostral $\overline{X}$ e compará-la com a média populacional descrita em $H_0$. 
+3. **Experimentação**: tomar amostras sobre o fenômeno em questão que nos permita tirar alguma conlusão sobre a veracidade de de $H_0$. Note que as hipóteses nula e alternativa se referem a predições sobre a posição da **média populaçional** $\mu$, que é justamente a informação que não temos, mas sobre a qual queremos conhecer. Como não temos acesso à $\mu$, nossa opção é tomar amostras do fenômeno (i.e. quantidade de chuva em diferentes localidades), calcular a média amostral $\overline{X}$ e compará-la com a média populacional descrita em $H_0$. 
+
+4. **Teste de hipóteses**: é o teste formal que nos permite dizer, com base nos resultados do experimento se há evidências suficiente para rejeitar $H_0$. Se não houver, concluímos que $H_0$ é verdadeira. Caso contrário assumimos $H_0$ como falsa e acitamos a hipótese alternativa $H_a$.
+
+:::
 
 ## Probabilidade e teste de hipóteses
 
@@ -176,19 +184,26 @@ segments(x0 = qr_b[1], x1 = qr_b[7], y0 = 0.65, y1 = 0.65, lwd = 2)
 
 ## Exemplificando um teste de hipóteses: o teste $Z$
 
-Digamos que o número de batimentos cardíacos por minuto de um adulto em repouso tenha média $\mu = 65$ e desvio padrão $\sigma = 9$. Você imagina que o sedentarismo altera o batimento médio de um adulto. Para testar esta suposição você deve inicialmente determinar as hipóteses nula e alternativa:
+::: {.callout-note}
+
+# Descrição do problema
+
+Digamos que o número de batimentos cardíacos por minuto de um adulto em repouso tenha média $\mu = 65$ e desvio padrão $\sigma = 9$. Você imagina que o sedentarismo altera o batimento médio de um adulto. 
+
+:::
+
+1. **Hipóteses estatíticas**:
 
 $H_0: \mu = 65$ batimentos por minuto
 
 $H_a: \mu \ne 65$ batimentos por minuto
 
-Em seguida você determina o nível de significância ($\alpha$) do teste. Vamos determinar que queremos fazer o teste ao nível de significância $\alpha = 0,05$.
+2. **Limite de rejeição**: determinamos o nível de significância ($\alpha$) do teste como $\alpha = 0,05$.
 
 > IMPORTANTE: O nível de significância $\alpha$ deve ser determinado **antes** da tomada de dados.
 
-Finalmente, você seleciona *ao acaso* $n = 15$ pessoas de hábito sedentário e mede seus batimentos cardíacos. 
+3. **Experimento**: selecionamos uma amostra **aleratória** selecionando *ao acaso* $n = 15$ pessoas de hábito sedentário e medimos seus batimentos cardíacos. Os resultados são:
 
-Os resultados obtidos desta amotra *aleatória* são: 
 
 ```{r}
 #| echo: false
@@ -211,11 +226,11 @@ e um erro padrão de:
 
 $\sigma_{\mu} = \frac{\sigma}{\sqrt{n}} = \frac{`r dp`}{`r round(sqrt(n),2)`} = `r round(ep,2)`$
 
-Com estes resultados encontramos o valor correspondente de Z.
+4. **Teste de hipóteses**: com estes resultados encontramos o valor correspondente de Z.
 
 $z = \frac{\overline{X} - \mu}{\sigma_{\mu}} = \frac{`r round(mean(BM),2)` - `r mu`}{`r round(ep,2)`} = `r round(z,2)`$
 
-Utilizando a Tabela Z, encontramos a probabilidade de obtermos valores tão ou mais extremos que $-`r round(z,2)`$ e $+`r round(z,2)`$.
+e utilizando a <a href="https://github.com/FCopf/amostragem-inferencia/blob/main/qmd/02-Inferencia_teste_hipoteses/img/Tabela_Z.pdf" target="_blank">Tabela Z</a> , encontramos a probabilidade de obtermos valores tão ou mais extremos que $-`r round(z,2)`$ e $+`r round(z,2)`$.
 
 ``` {r}
 #| echo: false
@@ -274,7 +289,7 @@ No exemplo anterior, obtivemos $p =$ **`r round(pnorm(-z)*2,3)`**. Isto signific
 
 > sendo $H_0$ **verdadeira**, existe uma probabilidade igual a $`r round(pnorm(-z)*2,3)`$ de que a média de uma amostra com $n = `r n`$ esteja tão ou mais distante de $\mu = `r mu`$ como observado neste experimento. 
 
-Se aceitarmos que esta probabilidade é **alta**, então não há motivo para buscar por outras explicações. Por outro lado, se concluirmo que esta probabilidade é **baixa**, estamos dizendo que resultado obtido é **improvável** segundo a hipótese nula. Neste caso, temos espaço para buscar por hipóteses **alternativas** que possam explicar o fenômeno.
+Se aceitarmos que esta probabilidade é **alta**, então não há motivo para buscar por outras explicações. Por outro lado, se concluirmos que esta probabilidade é **baixa**, estamos dizendo que resultado obtido é **improvável** segundo a hipótese nula. Neste caso, devemos recorrer à hipótese **alternativa** para explicar o fenômeno.
 
 Para decidir se a probabilidade obtida é alta ou baixa, devemos compará-la ao nível de significância $\alpha$ pré-estabelecido. $H_0$ será aceita somente se a probabilidade encontrada for **maior** que $\alpha$. Por outro lado, se nossa probabilidade for **menor ou igual** a $\alpha$, considerarmos os resultados improváveis  segundo a hipótese nula e **rejeitamos** $H_0$ em favor de $H_a$. 
 
@@ -308,7 +323,7 @@ As figuras abaixo representam as distribuições das médias amostrais e os erro
 #| fig-width: 8
 #| fig-height: 6
 #| label: fig-alfa-beta
-#| fig-cap: 'Relação entre $\alpha$ e $\beta$, ao aceitar ou rejeitar $H_0$.'
+#| fig-cap: 'Relação entre o erro tipo I ($\alpha$) e o erro tipos II ($\beta$), ao aceitar ou rejeitar $H_0$.'
 qr_a = qnorm(p = c(0.05, 0.95))
 dqr_a = dnorm(x = qr_a)
 
@@ -354,12 +369,10 @@ curve(expr = dnorm(x, ma,1), from = -5, to = 5,
       ylab = bquote(mu[a] > mu),
       xlab = "Valores de z", ylim = c(0, 0.5), xlim = c(-5,5), axes = F)
 axis(1, at = seq(-5,5,by = 1), cex.axis = 0.8)
-#axis(2, at = seq(-1, 0.5, by = 0.1), cex.axis = 0.8)
 polygon(x = qrc1_b, y = dqrc1_b, col = rgb(red = 0.9, 0,0, alpha = 0.3))  
 polygon(x = qrc2_b, y = dqrc2_b, col = rgb(red = 0.9, 0,0, alpha = 0.3))  
 segments(x0 = qr_b[1], x1 = qr_b[7], y0 = 0.65, y1 = 0.65, lwd = 2)
 text(y = c(0.1), x = c(0.5), labels = bquote(beta), font = 3)
-#text(y = c(0.1), x = c(2.7), labels = bquote(P(Z >= +z)))
 abline(v = qr_b[1], lty = 2)
 text(y = 0.35, x = -4.8, label = "B")
 ```
