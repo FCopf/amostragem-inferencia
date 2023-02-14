@@ -385,3 +385,11 @@ Dadas estas características, o único modo que reduzir os dois tipos de erros *
 ## Estabelecendo a hipótese alternativa: testes Bicaudais e Unicaudais
 
 
+___
+
+:::{.callout-note}
+# Vídeo-aulas
+
+{{< video https://youtu.be/LJJVcdAag24 >}}
+
+:::
