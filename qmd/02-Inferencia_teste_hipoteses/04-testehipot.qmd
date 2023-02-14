@@ -84,7 +84,7 @@ Como nossa pergunta se refere à **distância** entre $\overline{X}$ e $\mu$, de
 #| fig-width: 8
 #| fig-height: 6
 #| label: fig-limite-rej
-#| fig-cap: 'Representação da parea de rejeição para a distribuição Z.'
+#| fig-cap: 'Representação da área de rejeição na distribuição Z.'
 qr = qnorm(p = c(0.10, 0.90))
 dqr = dnorm(x = qr)
 
@@ -202,7 +202,7 @@ $H_a: \mu \ne 65$ batimentos por minuto
 
 > IMPORTANTE: O nível de significância $\alpha$ deve ser determinado **antes** da tomada de dados.
 
-3. **Experimento**: selecionamos uma amostra **aleratória** selecionando *ao acaso* $n = 15$ pessoas de hábito sedentário e medimos seus batimentos cardíacos. Os resultados são:
+3. **Experimento**: selecionamos uma amostra **aleatória** selecionando *ao acaso* $n = 15$ pessoas de hábito sedentário e medimos seus batimentos cardíacos. Os resultados são:
 
 
 ```{r}
@@ -356,7 +356,6 @@ curve(expr = dnorm(x, 0,1), from = -5, to = 5,
       ylab = bquote(mu[a] == mu),
       xlab = "Valores de z", ylim = c(0, 0.5), xlim = c(-5,5), axes = F)
 axis(1, at = seq(-5,5,by = 1), cex.axis = 0.8)
-#axis(2, at = seq(-1, 0.5, by = 0.1), cex.axis = 0.8)
 polygon(x = qrc1_a, y = dqrc1_a, col = rgb(red = 0.9, 0,0, alpha = 0.3))  
 polygon(x = qrc2_a, y = dqrc2_a, col = rgb(red = 0.9, 0,0, alpha = 0.3))  
 segments(x0 = qr_a[1], x1 = qr_a[7], y0 = 0.65, y1 = 0.65, lwd = 2)
@@ -382,8 +381,62 @@ Idealmente em um teste estatístico, seria interessante reduzir ao máximo os er
 Dadas estas características, o único modo que reduzir os dois tipos de erros **simultaneamente** é aumentando o tamanho amostral $n$ pois, neste caso, reduzimos o erro padrão ($\sigma_{\overline{X}}$) e consequentemente a sobreposição entre as duas curvas acima.
 
 
-## Estabelecendo a hipótese alternativa: testes Bicaudais e Unicaudais
+## Estabelecendo a hipótese alternativa: testes bilaterais *vs* unilaterais
 
+A hipótese alternativa estabelece nossa expectativa para a explicação dos resultados de um experimento no caso de $H_0$ ser falsa. Os testes que descrevemos acima são chamados **testes bilaterais ou bicaudais**. Isto significa que sendo $H_0$ falsa, podemos esperar que a média populacional esteja tanto acima quanto abaixo de $\mu$. Existem situações, no entanto, para as quais já temos uma expectativa *a priori* com base no conhecimento prévio sobre o fenêmeno estudado.
+
+Voltemos ao exemplo sobre a frequência cardíaca. Sabemos que o sedentarismo, tende a elevar a frequência cardíaca em repouso. Deste modo, o problema poderia ser estabelecido da seguinte forma.
+
+::: {.callout-note}
+
+# Descrição do problema
+
+Digamos que o número de batimentos cardíacos por minuto de um adulto em repouso tenha média $\mu = 65$ e desvio padrão $\sigma = 9$. A literatura sugere que o **sedentarismo** aumenta o batimento médio de um adulto. 
+
+:::
+
+O problema agora estabelece que no caso de rejeição de $H_0$, a frequência cardíaca deveia ser maior que 65 batimentos por minuto. Deste modo teremos como hipóteses estatísticas:
+
+1. **Hipóteses estatíticas**:
+
+$H_0: \mu = 65$ batimentos por minuto
+
+$H_a: \mu \gt 65$ batimentos por minuto
+
+A mudança aqui está em $H_a$ que estabelece que na hipótese de rejeição de $H_0$, esperamos **somente** que a frequencia cardíaca aumente.
+
+Esta modificação na construção das hipóteses estatísticas tem implicação na definição do limite de rejeição.
+
+2. **Limite de rejeição**: se definimos $\alpha = 0,05$, e $H_a: \mu \gt 65$, temos que a área de rejeição será expressa **acima** de 65 batimentos por minuto.
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 5
+#| label: fig-norm-unil
+#| fig-cap: 'Área de rejeição em um teste unilateral com $\alpha = 0,05$.'
+alfa <- 0.05
+df_z <- data.frame(x = c(-4, 4))
+zcritico <- round(qnorm(p = 1 - alfa),2)
+cor_rej <- rgb(red = 0.9, 0,0, alpha = 0.3)#'#d14143'
+  
+pZ <- ggplot(data = df_z,
+              mapping = aes(x = x)) +
+  stat_function(fun = dnorm) +
+  labs(x = "Z", y = "") +
+  geom_area(stat = "function", fun = dnorm,
+            fill = cor_rej,
+            xlim = c(zcritico,5)) +
+  scale_x_continuous(breaks = c(0 ,zcritico),
+                     labels =  c(0 ,zcritico),
+                     limits =  c(-4, 4)) +
+  annotate('text', x = c(0, 3),
+           y = c(0.23, 0.09),
+           label = c(1-alfa, alfa), size = 12) +
+  theme_classic(base_size = 22)
+
+pZ
+```
 
 ___
 
