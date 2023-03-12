@@ -350,13 +350,14 @@ Um exemplo
 <p>Digamos ainda que o modelo climático estabeleça que desvio padrão para a quantidade de chuva seja <span class="math inline">\(\sigma = 30\)</span>. Neste caso, o erro padrão seria de <span class="math inline">\(\sigma_{\mu} = \frac{30}{\sqrt{n}}\)</span>.</p>
 <p>Feito isto, temos em mãos o <strong>modelo probabilístico</strong> que, aliado a uma amostra particular, nos permitirá concluir se há evidências para rejeitar <span class="math inline">\(H_0\)</span> em favor de <span class="math inline">\(H_a\)</span>.</p>
 </section>
-<section id="definindo-o-limite-de-rejeição-para-h_0" class="level3" data-number="6.1.2">
-<h3 data-number="6.1.2" class="anchored" data-anchor-id="definindo-o-limite-de-rejeição-para-h_0"><span class="header-section-number">6.1.2</span> Definindo o limite de rejeição para <span class="math inline">\(H_0\)</span></h3>
+<section id="definindo-o-limite-de-rejeição-para-h_0-nivel-de-significância-alpha" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="definindo-o-limite-de-rejeição-para-h_0-nivel-de-significância-alpha"><span class="header-section-number">6.1.2</span> Definindo o limite de rejeição para <span class="math inline">\(H_0\)</span>: nivel de significância <span class="math inline">\(\alpha\)</span></h3>
 <p>Segundo a distribuição normal, a probabilidade do valor observado <span class="math inline">\(\overline{X}\)</span> estar <strong>tão ou mais distante</strong> de <span class="math inline">\(\mu\)</span> na distribuição <span class="math inline">\(Z\)</span> é calculando por:</p>
 <p><span class="math display">\[z = \frac{\overline{X} - \mu}{\sigma_{\overline{X}}}\]</span></p>
 <p>O valor de <span class="math inline">\(z\)</span> calculado é chamado de <strong>estatitica do teste</strong>. Com o uso da Tabela <span class="math inline">\(Z\)</span>, esta estatística será utilizada para encontrar:</p>
-<p><span class="math display">\[P(Z \ge z) = P(\overline{X} \ge \mu)\]</span></p>
-<p>Como nossa pergunta se refere à <strong>distância</strong> entre <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(\mu\)</span>, devemos encontar também <span class="math inline">\(P(Z \le -z)\)</span>, de modo que a probabilidade que nos interessa será representada pela área destacada em vermelho na figura abaixo que nos dá <span class="math inline">\(P(Z \ge |z|)\)</span>.</p>
+<p><span class="math display">\[P(Z \ge z) = P(\overline{X} \ge \mu)\]</span> A probabilidade <span class="math inline">\(P(Z \ge z)\)</span> é encontrada na <strong>distribuição normal padronizada</strong> (<a href="01-norm.html"><span>Capítulo&nbsp;3</span></a>) em que <span class="math inline">\(Z \sim \mathcal{N}(0,\,\frac{\sigma}{\sqrt{n}})\)</span> e como nossa pergunta se refere à <strong>distância</strong> entre <span class="math inline">\(\overline{X}\)</span> e <span class="math inline">\(\mu\)</span>, devemos encontar também <span class="math inline">\(P(Z \le -z)\)</span>, de modo que a probabilidade que nos interessa é denominada de <strong>valor de p</strong> de um teste de hipóteses:</p>
+<p><span class="math display">\[p = P(Z \ge |z|)\]</span></p>
+<p>O valor de <span class="math inline">\(p\)</span> é a área destacada em vermelho da distribuição normal padronizada:</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-limite-rej" class="quarto-figure quarto-figure-center anchored">
@@ -367,14 +368,23 @@ Um exemplo
 </div>
 </div>
 </div>
-<p>A área destacada em vermelho será irá diminuir conforme <span class="math inline">\(\overline{X}\)</span> se distancia de <span class="math inline">\(\mu\)</span> e irá aumentar para valores de <span class="math inline">\(\overline{X}\)</span> muito próximos a <span class="math inline">\(\mu\)</span>. Como estamos falando de uma distribuição de probabilidade, esta área mede a probabilidade de encontrarmos <span class="math inline">\(\overline{X}\)</span> pelo menos a uma dada distância de <span class="math inline">\(\mu\)</span>, <strong>assumindo</strong> que <span class="math inline">\(H_0\)</span> seja verdadeiro. Se esta área for muito pequena, a probabilidade de que <span class="math inline">\(\overline{X}\)</span> seja condizente com <span class="math inline">\(H_0\)</span> diminui. Chamaremos este probabilidade de <strong>valor de p</strong>. Portanto, se <span class="math inline">\(p\)</span> for <strong>muito pequeno</strong> dizemos que é improvável que <span class="math inline">\(\overline{X}\)</span> seja condizente com <span class="math inline">\(H_0\)</span>, nos levando a <strong>rejeitar</strong> <span class="math inline">\(H_O\)</span> em favor de <span class="math inline">\(H_a\)</span>.</p>
-<p>A decisão sobre o que é uma probabilidade foi <strong>muito pequena</strong> é feita com base no <strong>limite de rejeição</strong> <span class="math inline">\(\alpha\)</span>, também chamado de <strong>nivel crítico</strong> ou <strong>nível de significância</strong>. Deste modo, a conclusão de um teste estatístico se dá por:</p>
-<blockquote class="blockquote">
-<p>Se <span class="math inline">\(p &gt; \alpha\)</span> –&gt; <strong>ACEITAMOS <span class="math inline">\(H_0\)</span></strong></p>
-</blockquote>
-<blockquote class="blockquote">
-<p>Se <span class="math inline">\(p \le \alpha\)</span> –&gt; <strong>REJEITAMOS <span class="math inline">\(H_0\)</span></strong> (e assumimos <span class="math inline">\(H_a\)</span> como verdadeira)</p>
-</blockquote>
+<p>A área destacada em vermelho diminui conforme <span class="math inline">\(\overline{X}\)</span> se distancia de <span class="math inline">\(\mu\)</span> e aumenta se <span class="math inline">\(\overline{X}\)</span> está próximo a <span class="math inline">\(\mu\)</span>.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+O valor de p e nível de significância
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Mede a probabilidade de encontrarmos <span class="math inline">\(\overline{X}\)</span> tão ou mais distante de <span class="math inline">\(\mu\)</span>, <strong>assumindo</strong> que <span class="math inline">\(H_0\)</span> seja verdadeira. Se <span class="math inline">\(p\)</span> for muito pequeno, a probabilidade de que <span class="math inline">\(\overline{X}\)</span> seja condizente com <span class="math inline">\(H_0\)</span> diminui. Neste caso dizemos que é <strong>improvável</strong> que <span class="math inline">\(\overline{X}\)</span> seja proviniente de <span class="math inline">\(H_0\)</span>, o que nos leva levando a <strong>rejeitar</strong> a hipótese nula em favor de <span class="math inline">\(H_a\)</span>.</p>
+<p>A decisão de rejeitar <span class="math inline">\(H_0\)</span> depende do <strong>limite de rejeição</strong> <span class="math inline">\(\alpha\)</span>, também chamado de <strong>nivel crítico</strong> ou <strong>nível de significância</strong>. A definir o valor de <span class="math inline">\(\alpha\)</span>, a conclusão de um teste estatístico se dá por (<a href="#fig-limite-rej-alfa">Figura&nbsp;<span>6.2</span></a>):</p>
+<ul>
+<li><p>Se <span class="math inline">\(p &gt; \alpha\)</span> –&gt; <strong>ACEITAMOS <span class="math inline">\(H_0\)</span></strong>, <span class="math inline">\(\overline{X}\)</span> está próximo de <span class="math inline">\(\mu\)</span></p></li>
+<li><p>Se <span class="math inline">\(p \le \alpha\)</span> –&gt; <strong>REJEITAMOS <span class="math inline">\(H_0\)</span></strong>, <span class="math inline">\(\overline{X}\)</span> está distante de <span class="math inline">\(\mu\)</span>. A assumimos <span class="math inline">\(H_a\)</span> como verdadeira.</p></li>
+</ul>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-limite-rej-alfa" class="quarto-figure quarto-figure-center anchored">
@@ -382,6 +392,8 @@ Um exemplo
 <p><img src="04-testehipot_files/figure-html/fig-limite-rej-alfa-1.png" class="img-fluid figure-img" width="768"></p>
 <p></p><figcaption class="figure-caption">Figura&nbsp;6.2: Efeito do nível de significancia sobre a área de rejeição em um teste de hipótese.</figcaption><p></p>
 </figure>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -563,6 +575,7 @@ Descrição do problema
 </div>
 </div>
 </div>
+<p>Note portanto, que a diferença entre um teste bilateral e um teste unilateral está na definição dá área que expressa a zona de rejeição, <span class="math inline">\(\alpha\)</span> para <span class="math inline">\(H_0\)</span>. Nos teste bilaterais, a área de rejeição é distribuída acima e abaixo de <span class="math inline">\(\mu\)</span> (<a href="#fig-limite-rej-alfa">Figura&nbsp;<span>6.2</span></a>), enquanto nos teste unilaterais, a área estará toda acima ou abaixo de <span class="math inline">\(\mu\)</span>, a depender do que foi estabelecido em <span class="math inline">\(H_a\)</span> (<a href="#fig-norm-unil">Figura&nbsp;<span>6.5</span></a>).</p>
 <hr>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
