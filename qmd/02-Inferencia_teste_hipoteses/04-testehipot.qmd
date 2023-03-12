@@ -66,7 +66,7 @@ Digamos ainda que o modelo climático estabeleça que desvio padrão para a quan
 
 Feito isto, temos em mãos o **modelo probabilístico** que, aliado a uma amostra particular, nos permitirá concluir se há evidências para rejeitar $H_0$ em favor de $H_a$.
 
-### Definindo o limite de rejeição para $H_0$
+### Definindo o limite de rejeição para $H_0$: nivel de significância $\alpha$
 
 Segundo a distribuição normal, a probabilidade do valor observado $\overline{X}$ estar **tão ou mais distante** de $\mu$ na distribuição $Z$ é calculando por:
 
@@ -75,9 +75,11 @@ $$z = \frac{\overline{X} - \mu}{\sigma_{\overline{X}}}$$
 O valor de $z$ calculado é chamado de **estatitica do teste**. Com o uso da Tabela $Z$, esta estatística será utilizada para encontrar:
 
 $$P(Z \ge z) = P(\overline{X} \ge \mu)$$
+A probabilidade $P(Z \ge z)$ é encontrada na **distribuição normal padronizada** (@sec-norm) em que $Z \sim \mathcal{N}(0,\,\frac{\sigma}{\sqrt{n}})$ e como nossa pergunta se refere à **distância** entre $\overline{X}$ e $\mu$, devemos encontar também $P(Z \le -z)$, de modo que a probabilidade que nos interessa é denominada de **valor de p** de um teste de hipóteses:
 
-Como nossa pergunta se refere à **distância** entre $\overline{X}$ e $\mu$, devemos encontar também $P(Z \le -z)$, de modo que a probabilidade que nos interessa será representada pela área destacada em vermelho na figura abaixo que nos dá $P(Z \ge |z|)$.
+$$p = P(Z \ge |z|)$$
 
+O valor de $p$ é a área destacada em vermelho da distribuição normal padronizada:
 
 ``` {r}
 #| echo: false
@@ -113,14 +115,19 @@ text(y = c(0.1), x = c(2.7), labels = bquote(P(Z >= +z)))
 
 ```
 
-A área destacada em vermelho será irá diminuir conforme $\overline{X}$ se distancia de $\mu$ e irá aumentar para valores de $\overline{X}$ muito próximos a $\mu$. Como estamos falando de uma distribuição de probabilidade, esta área mede a probabilidade de encontrarmos $\overline{X}$ pelo menos a uma dada distância de $\mu$, **assumindo** que $H_0$ seja verdadeiro. Se esta área for muito pequena, a probabilidade de que $\overline{X}$ seja condizente com $H_0$ diminui. Chamaremos este probabilidade de **valor de p**. Portanto, se $p$ for **muito pequeno** dizemos que é improvável que $\overline{X}$ seja condizente com $H_0$, nos levando a **rejeitar** $H_O$ em favor de $H_a$. 
+A área destacada em vermelho diminui conforme $\overline{X}$ se distancia de $\mu$ e aumenta se $\overline{X}$ está próximo a $\mu$. 
 
-A decisão sobre o que é uma probabilidade foi **muito pequena** é feita com base no **limite de rejeição** $\alpha$, também chamado de **nivel crítico** ou **nível de significância**. Deste modo, a conclusão de um teste estatístico se dá por:
+:::{.callout-note}
 
-> Se $p > \alpha$ --> **ACEITAMOS $H_0$**
+# O valor de p e nível de significância
 
-> Se $p \le \alpha$ --> **REJEITAMOS $H_0$** (e assumimos $H_a$ como verdadeira)
+Mede a probabilidade de encontrarmos $\overline{X}$ tão ou mais distante de $\mu$, **assumindo** que $H_0$ seja verdadeira. Se $p$ for muito pequeno, a probabilidade de que $\overline{X}$ seja condizente com $H_0$ diminui. Neste caso dizemos que é **improvável** que $\overline{X}$ seja proviniente de $H_0$, o que nos leva  levando a **rejeitar** a hipótese nula em favor de $H_a$. 
 
+A decisão de rejeitar $H_0$ depende do **limite de rejeição** $\alpha$, também chamado de **nivel crítico** ou **nível de significância**. A definir o valor de $\alpha$, a conclusão de um teste estatístico se dá por (@fig-limite-rej-alfa):
+
++ Se $p > \alpha$ --> **ACEITAMOS $H_0$**, $\overline{X}$ está próximo de $\mu$ 
+
++ Se $p \le \alpha$ --> **REJEITAMOS $H_0$**, $\overline{X}$ está distante de $\mu$. A assumimos $H_a$ como verdadeira.
 
 ``` {r}
 #| echo: false
@@ -181,6 +188,7 @@ segments(x0 = qr_b[1], x1 = qr_b[7], y0 = 0.65, y1 = 0.65, lwd = 2)
 
 ```
 
+:::
 
 ## Exemplificando um teste de hipóteses: o teste $Z$
 
@@ -437,6 +445,9 @@ pZ <- ggplot(data = df_z,
 
 pZ
 ```
+
+Note portanto, que a diferença entre um teste bilateral e um teste unilateral está na definição dá área que expressa a zona de rejeição, $\alpha$ para $H_0$. Nos teste bilaterais, a área de rejeição é distribuída acima e abaixo de $\mu$ (@fig-limite-rej-alfa), enquanto nos teste unilaterais, a área estará toda acima ou abaixo de $\mu$, a depender do que foi estabelecido em $H_a$ (@fig-norm-unil).
+
 
 ___
 

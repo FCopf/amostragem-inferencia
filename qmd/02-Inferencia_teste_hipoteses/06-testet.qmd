@@ -239,6 +239,32 @@ $H_0: \mu_A = \mu_B$ gramas
 
 $H_a: \mu_A \ne \mu_B$ gramas
 
+:::{.callout-note}
+
+# Teste de homogeneidade de variâncias
+
+Um dos pressupostos do teste t que apresentaremos a frente é de que as populações que serão comparadas têm a mesma variância $\sigma^2$. Devemos portanto testar o pressuposto de **homogeneidade de variâncias** que pode ser realizado com o teste de razão de variâncias discutido no @sec-testevar.
+
+No R fazemos o teste de homogeneidade de variâncias com o comando abaixo.
+
+```{r}
+var.test(ra$Tempo ~ ra$Droga)
+```
+
+```{r}
+#| echo: false
+ft = var.test(ra$Tempo ~ ra$Droga)
+p = ft$p.value
+Fc = ft$statistic
+```
+
+No teste acima, $F_{calculado} = `r round(Fc,2)`$ e $p = `r round(p,3)`$. Assumindo um $\alpha = 0,05$, concluímos que **não há evidências** para rejeitar a hipótese de homogeneidade e que assumimos que as duas populações têm a mesma variância. Deste modo podemos continuar com o teste t.
+
+:::
+
+
+
+
 O teste t para duas amostras é calculado por:
 
 $$t = \frac{(\overline{X_A} - \mu_A) - (\overline{X_B} - \mu_B)}{s_{\overline{X_A}-\overline{X_B}}}$$

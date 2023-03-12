@@ -81,11 +81,11 @@ O segundo motivo que torna a distribuição normal uma das mais importantes em e
 
 O modelo normal de probabilidades é uma função matemática dada por:
 
-$$f(x) = \frac{1}{\sqrt(2\pi\sigma^2)}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}$, $x \in \mathbb{R} | -\infty \le y \le +\infty$$
+$$f(x) = \frac{1}{\sqrt(2\pi\sigma^2)}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}, x \in \mathbb{R} | -\infty \le y \le +\infty$$
 
 A expressão envolve as quantias $\mu$ e $\sigma$, definidas como os **parâmetros** da distribuição que representam respectivamente, sua média e o desvio padrão. Para dizer que uma variável aleatória $X$ tem distribuição normal por meio da expressão:
 
-$X \sim \mathcal{N}(\mu,\,\sigma^2)$
+$X \sim \mathcal{N}(\mu,\,\sigma)$
 
 Esta expressão diz de $X$ é normalmente distribuída ($\mathcal{N}$) e que esta distribuição tem parâmetros $\mu$ e $\sigma$.
 
